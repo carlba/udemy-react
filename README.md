@@ -24,3 +24,25 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 ### 29. Understanding Component Basics
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090852
+
+
+### 30. Understanding JSX
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090856
+
+The initial return statement is in JSX which is a templating language for generation HTML.
+
+
+```jsx
+function App() {
+  return (
+    <div className="App">
+      <h1>Hi I'm a React App</h1>
+    </div>
+  );
+
+  // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'))
+}
+```
+
+In the second return statement we can see what React does with this under the hood.
