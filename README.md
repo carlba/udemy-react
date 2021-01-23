@@ -46,3 +46,19 @@ function App() {
 ```
 
 In the second return statement we can see what React does with this under the hood.
+
+### 31. JSX Restrictions
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090858
+
+```jsx
+function App() {
+  return (
+    <div className="App">
+      <h1>Hi I'm a React App</h1>      
+    </div>
+  );
+}
+```
+* `className` is used instead of the HTML class attribute. Since class is a reserved name.
+* It is best practice to wrap one component into one element.
