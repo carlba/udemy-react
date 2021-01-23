@@ -12,3 +12,7 @@ Is a [tool](https://github.com/facebook/create-react-app) to create a react proj
 maintained by a community run by facebook.
 
 1. Install using npm `npm install -h create-react-app`
+
+## Basic Project Structure
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090850
