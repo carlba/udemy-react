@@ -294,3 +294,8 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 <iframe height=400 src="https://stackblitz.com/edit/carlba-react-render-conditionally?embed=1&file=src/App.js&hideExplorer=1"></iframe>
 
 - JSX can also contain Javascript code simpler statements such as ternaries can be used when enclosed in `{}`.
+
+### 54. Handling Dynamic Content "The JavaScript Way"
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091068
+
