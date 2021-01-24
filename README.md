@@ -207,3 +207,9 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 ```
 
 - Event handler for on click is called `onClick` in JSX as opposed to `onclick` in JS.
+
+### 41. To Which Events Can You Listen?
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8124210
+
+https://reactjs.org/docs/events.html#supported-events
