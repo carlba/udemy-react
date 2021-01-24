@@ -197,3 +197,13 @@ Here, the `NewPost` component contains `state` . Only class-based components can
 `state` simply is a property of the component class, you have to call it `state` though - the name is not optional. You can then access it via `this.state` in your class JSX code (which you return in the required `render()` method).
 
 Whenever `state` changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to `props` is, that this happens within one and the same component - you don't receive new data (`props` ) from outside!
+
+### 40. Handling Events with Methods
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090880
+
+```jsx
+<button onClick={this.switchNameHandler}>Switch Name</button>
+```
+
+- Event handler for on click is called `onClick` in JSX as opposed to `onclick` in JS.
