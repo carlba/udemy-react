@@ -91,22 +91,31 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
   `{Math.floor(Math.random() * 30 )}` Would for instance output a random number
 
-### 36. Working with Props
+### 36. Working with Props and 37.Understanding the "children" Prop
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090870
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090872
 
 It is possible to send parameters to components using props, like so:
 
 ```jsx
-<Person name="Carl" age="37" />
+<Person name="Johanna" age="32">
+  My hobbies: Dancing
+</Person>
 ```
 
 ```jsx
 const person = props => {
   return (
-    <p>
-      I'm {props.name} and I am {props.age} years old
-    </p>
+    <div>
+      <p>
+        I'm {props.name} and I am {props.age} years old
+      </p>
+      <p>{props.children}</p>
+    </div>
   );
 };
 ```
+
+The `{props.children}` attribute contains the contents of the Person element in the
+parent component (The value between the start and closing tag).
