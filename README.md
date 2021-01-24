@@ -261,3 +261,16 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
   ```
 
   The more preformat way
+
+### 47. Adding Two Way Binding
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090892
+
+To both reflect the content in an input box in a div and also show the content of that
+div in the input box Two Way Binding is needed.
+
+```jsx
+<input type="text" onChange={props.changed} value={props.name} />
+```
+
+<iframe src="https://stackblitz.com/edit/carlba-react-two-way-binding?embed=1&file=src/App.js" height=600></iframe>
