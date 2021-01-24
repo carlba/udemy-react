@@ -279,9 +279,18 @@ div in the input box Two Way Binding is needed.
 <input type="text" onChange={props.changed} value={props.name} />
 ```
 
-<iframe src="https://stackblitz.com/edit/carlba-react-two-way-binding?embed=1&file=src/App.js" height=600></iframe>
+<iframe height=600 src="https://stackblitz.com/edit/carlba-react-two-way-binding?embed=1&file=src/App.js"></iframe>
 
 ### 48. Adding Styling with Stylesheets
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090894
 
+## Section 4: Working with Lists and Conditionals
+
+### 53. Rendering Content Conditionally
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091064
+
+<iframe height=400 src="https://stackblitz.com/edit/carlba-react-render-conditionally?embed=1&file=src/App.js&hideExplorer=1"></iframe>
+
+- JSX can also contain Javascript code simpler statements such as ternaries can be used when enclosed in `{}`.
