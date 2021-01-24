@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Person from './Person/Person'
+import Person from './Person/Person';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <p>This is really working!</p>
       <Person />
     </div>
-  );  
+  );
 }
 
 export default App;
