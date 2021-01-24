@@ -301,3 +301,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 <iframe height=500 src="https://stackblitz.com/edit/carlba-react-render-conditionally-javascript?embed=1&file=src/App.js"></iframe
 
+### 56. Outputting Lists
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091072
+
