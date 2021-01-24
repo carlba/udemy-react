@@ -24,14 +24,8 @@ class App extends Component {
   };
 
   deletePersonHandler = personIndex => {
-    const persons = this.state.persons;
-    persons.splice(personIndex, 1);
-    this.setState({ persons: persons });
+    this.setState({ persons: this.state.persons.filter((_, index) => index !== personIndex) });
   };
-
-  // deletePersonHandler = personIndex => {
-  //   this.setState({ persons: this.state.persons.filter((_, index) => index !== personIndex) });
-  // };
 
   togglePersonsHandler = () => {
     this.setState({ showPersons: !this.state.showPersons });

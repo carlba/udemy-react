@@ -310,3 +310,9 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 ### 57. Lists & State
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8111600
+
+### 58. Updating State Immutably
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091074
+
+* Never mutate the state directly always make sure you are making a copy or using a function that already copies the state property.
