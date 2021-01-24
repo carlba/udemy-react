@@ -75,7 +75,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 When creating components, you have the choice between **two different ways:**
 
 1. **Functional components** (also referred to as "presentational", "dumb" or "stateless" components - more about this later in the course) => `const cmp = () => { return <div>some JSX</div> }` (using ES6 arrow functions as shown here is recommended but optional)
-2. **class-based components** (also referred to as "containers", "smart" or "stateful" components) => `class Cmp extends Component { render () { return <div>some JSX</div> } }` 
+2. **class-based components** (also referred to as "containers", "smart" or "stateful" components) => `class Cmp extends Component { render () { return <div>some JSX</div> } }`
 
 We'll of course dive into the difference throughout this course, you can already note that you should use 1) as often as possible though. It's the best-practice.
 
@@ -90,3 +90,23 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 - Dynamic content in JSX templates are written between single curly braces. Any one line javascript expression can be written within the braces.
 
   `{Math.floor(Math.random() * 30 )}` Would for instance output a random number
+
+### 36. Working with Props
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090870
+
+It is possible to send parameters to components using props, like so:
+
+```jsx
+<Person name="Carl" age="37" />
+```
+
+```jsx
+const person = props => {
+  return (
+    <p>
+      I'm {props.name} and I am {props.age} years old
+    </p>
+  );
+};
+```
