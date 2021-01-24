@@ -316,3 +316,9 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091074
 
 * Never mutate the state directly always make sure you are making a copy or using a function that already copies the state property.
+
+### 59. Lists & Keys
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091076
+
+* Always add a key attribute to you React component to allow react to optimize using it's virtual dom.
