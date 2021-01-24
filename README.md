@@ -234,3 +234,30 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/1
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556166
 
 - You should avoid stateful components if it is not absolutely necessary
+
+### 46. Passing Method References Between Components
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8090888
+
+- It is perfectly fine in React to pass methods such as click handler functions as props
+  to other components.
+
+- Arguments can be passed to a method when using is as an event handler in two ways
+
+  The more preformat way:
+
+  ```jsx
+  <Person
+    name={this.state.persons[1].name}
+    age={this.state.persons[1].age}
+    click={this.switchNameHandler.bind(this, 'Charles')}
+  >
+  ```
+
+  The simpler way
+
+  ```jsx
+  <button onClick={() => this.switchNameHandler('Carlos')}>Switch Name</button>
+  ```
+
+  The more preformat way
