@@ -8,6 +8,12 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 ## Section 3: Understanding the Base Features & Syntax
 
+- create-react-app: https://github.com/facebookincubator/create-react-app
+- Introducing JSX: https://reactjs.org/docs/introducing-jsx.html
+- Rendering Elements: https://reactjs.org/docs/rendering-elements.html
+- Components & Props: https://reactjs.org/docs/components-and-props.html
+- Listenable Events: https://reactjs.org/docs/events.html
+
 ### Create React App
 
 Is a [tool](https://github.com/facebook/create-react-app) to create a react project it is
