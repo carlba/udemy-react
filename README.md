@@ -219,3 +219,12 @@ https://reactjs.org/docs/events.html#supported-events
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556154
 
 It is possible to update the state of a component (and in turn trigger a DOM update) using the `this.setState()` method. This will merge a new state object with the old one.
+
+### 44.Using the useState() Hook for State Manipulation (Functional Component)
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556164
+
+- Functional components uses useState to manage state. It can be imported from `react`
+  and returns an array of `[currentState, stateModifierFunction]`. It is good practice to
+  have partial states for separate things. When using one state it is up to the operator
+  to merge the state on update.
