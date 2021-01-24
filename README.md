@@ -213,3 +213,9 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8124210
 
 https://reactjs.org/docs/events.html#supported-events
+
+### 42. Manipulating the State
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556154
+
+It is possible to update the state of a component (and in turn trigger a DOM update) using the `this.setState()` method. This will merge a new state object with the old one.

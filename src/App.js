@@ -13,6 +13,14 @@ class App extends Component {
 
   switchNameHandler = () => {
     console.log('switchNameHandler called');
+    // React will not detect: this.state.persons[0].name = 'Carlos';
+    this.setState({
+      persons: [
+        { name: 'Carlos', age: 37 },
+        { name: 'Johanna', age: 32 },
+        { name: 'Tobias', age: 28 }
+      ]
+    });
   };
 
   render() {
