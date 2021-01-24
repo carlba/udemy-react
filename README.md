@@ -228,3 +228,9 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/1
   and returns an array of `[currentState, stateModifierFunction]`. It is good practice to
   have partial states for separate things. When using one state it is up to the operator
   to merge the state on update.
+
+### 45. Stateless vs Stateful Components
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556166
+
+- You should avoid stateful components if it is not absolutely necessary
