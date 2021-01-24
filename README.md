@@ -305,3 +305,8 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091072
 
+<iframe height=500 src="https://stackblitz.com/edit/carlba-react-rendering-list?embed=1&file=src/App.js"></iframe>
+
+### 57. Lists & State
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8111600
