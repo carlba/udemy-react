@@ -287,6 +287,9 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 ## Section 4: Working with Lists and Conditionals
 
+- Conditional Rendering: https://reactjs.org/docs/conditional-rendering.html
+- Lists & Keys: https://reactjs.org/docs/lists-and-keys.html
+
 ### 53. Rendering Content Conditionally
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091064
