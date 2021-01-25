@@ -343,3 +343,17 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094580
 
+### 68. Adding and Using Radium
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094586
+
+Radium is a popular package that allows us to use inline styles with psedo selectors.
+
+```bash
+npm install --save radium
+```
+
+<iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-radium?embed=1&file=src/App.js&hideExplorer=1"></iframe>
+
+
+
