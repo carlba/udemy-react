@@ -339,3 +339,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 * Inline styling has the drawback that pseudo selections can't be used.
 * Using a specific CSS file has the drawback that the styles are global.
 
+### 67. Setting Class Names Dynamically
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094580
+
