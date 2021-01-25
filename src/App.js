@@ -12,14 +12,11 @@ class App extends Component {
     showPersons: false
   };
 
-  nameChangedHandler = event => {
-    this.setState({
-      persons: [
-        { name: 'Carl', age: 37 },
-        { name: event.target.value, age: 32 },
-        { name: 'Tobias', age: 27 }
-      ]
-    });
+  nameChangedHandler = (event, id) => {
+    const persons = [...this.state.persons].map(person =>
+      person.id !== id ? person : { ...person, name: event.target.value }
+    );
+    this.setState({ persons });
   };
 
   deletePersonHandler = personIndex => {
@@ -49,6 +46,7 @@ class App extends Component {
               name={person.name}
               age={person.age}
               key={person.id}
+              changed={event => this.nameChangedHandler(event, person.id)}
             />
           ))}
         </div>
