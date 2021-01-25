@@ -329,3 +329,13 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 ### 60. Flexible Lists
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091078
+
+## Section 5: Styling React Components & Elements
+
+### 65. Outlining the Problem Set
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094578
+
+* Inline styling has the drawback that pseudo selections can't be used.
+* Using a specific CSS file has the drawback that the styles are global.
+
