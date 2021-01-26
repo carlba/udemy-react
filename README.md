@@ -379,3 +379,13 @@ Another popular way for styling components is the [Styled Components](https://st
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/16851072
 
+### 73. Working with CSS Modules
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/16851076
+
+<iframe height=600 src="https://stackblitz.com/edit/carlba-js-react-css-modules?embed=1&file=src/App.js"></iframe>
+
+
+
+https://create-react-app.dev/docs/adding-a-css-modules-stylesheet
+
