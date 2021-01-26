@@ -448,3 +448,10 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 ## Section 7: Diving Deeper into Components & React Internals
 
+### 85. A Better Project Structure
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8103728
+
+* What goes into what component is a tricky question.
+  * Don't overdo it if there is a need for splitting things up then do it.
+* The App component should be light on rendering logic and instead outsource that to subcomponents.
