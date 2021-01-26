@@ -373,6 +373,8 @@ Another popular way for styling components is the [Styled Components](https://st
 
 <iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-styled-components?embed=1&file=src/App.js&hideExplorer=1"></iframe>
 
+
+
 ### 71. More on Styled Components
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/16851072
