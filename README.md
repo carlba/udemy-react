@@ -455,3 +455,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 * What goes into what component is a tricky question.
   * Don't overdo it if there is a need for splitting things up then do it.
 * The App component should be light on rendering logic and instead outsource that to subcomponents.
+
+### 86. Splitting an App Into Components
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556244
