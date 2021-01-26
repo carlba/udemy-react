@@ -441,3 +441,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 React has a nice [Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 for debugging purposes.
+
+### 81. Using Error Boundaries (React 16+)
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094610
