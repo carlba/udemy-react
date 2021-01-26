@@ -361,3 +361,17 @@ npm install --save radium
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094590#questions/13791350
 
+
+
+### 70. Introducing Styled Components
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/16851070
+
+Another popular way for styling components is the [Styled Components](https://styled-components.com/) library.
+
+* Install it `npm install --save styled-components`
+
+<iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-styled-components?embed=1&file=src/App.js&hideExplorer=1"></iframe>
+
+
+
