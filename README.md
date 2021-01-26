@@ -389,3 +389,6 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/1
 
 https://create-react-app.dev/docs/adding-a-css-modules-stylesheet
 
+### 74. CSS Modules & Media Queries
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/16851078
