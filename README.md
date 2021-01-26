@@ -445,3 +445,6 @@ for debugging purposes.
 ### 81. Using Error Boundaries (React 16+)
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094610
+
+## Section 7: Diving Deeper into Components & React Internals
+
