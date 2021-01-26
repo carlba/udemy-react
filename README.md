@@ -432,3 +432,9 @@ By the way, if you somehow also want to define a global (i.e. un-transformed) CS
 ```
 
 Now you can use `className="Post"` anywhere in your app and receive that styling.
+
+## Section 6: Debugging React Apps
+
+### 78. Understanding Error Messages
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094604
