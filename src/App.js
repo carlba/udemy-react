@@ -15,7 +15,7 @@ class App extends Component {
 
   nameChangedHandler = (event, id) => {
     const persons = [...this.state.persons].map(person =>
-      person.id !== id ? person : { ...person, name: event.targe.test }
+      person.id !== id ? person : { ...person, name: event.target.value }
     );
     this.setState({ persons });
   };

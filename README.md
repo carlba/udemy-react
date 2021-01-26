@@ -336,8 +336,8 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094578
 
-* Inline styling has the drawback that pseudo selections can't be used.
-* Using a specific CSS file has the drawback that the styles are global.
+- Inline styling has the drawback that pseudo selections can't be used.
+- Using a specific CSS file has the drawback that the styles are global.
 
 ### 67. Setting Class Names Dynamically
 
@@ -355,13 +355,9 @@ npm install --save radium
 
 <iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-radium?embed=1&file=src/App.js&hideExplorer=1"></iframe>
 
-
-
 ### 69. Using Radium for Media Queries
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094590#questions/13791350
-
-
 
 ### 70. Introducing Styled Components
 
@@ -369,11 +365,9 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/1
 
 Another popular way for styling components is the [Styled Components](https://styled-components.com/) library.
 
-* Install it `npm install --save styled-components`
+- Install it `npm install --save styled-components`
 
 <iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-styled-components?embed=1&file=src/App.js&hideExplorer=1"></iframe>
-
-
 
 ### 71. More on Styled Components
 
@@ -384,8 +378,6 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/1
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/16851076
 
 <iframe height=600 src="https://stackblitz.com/edit/carlba-js-react-css-modules?embed=1&file=src/App.js"></iframe>
-
-
 
 https://create-react-app.dev/docs/adding-a-css-modules-stylesheet
 
@@ -405,7 +397,7 @@ It's not using magic for that, instead it'll simply **automatically generate uni
 
 ```css
 .Post {
-    color: red;
+  color: red;
 }
 ```
 
@@ -413,10 +405,8 @@ It's not using magic for that, instead it'll simply **automatically generate uni
 
 ```jsx
 import classes from './Post.css';
- 
-const post = () => (
-    <div className={classes.Post}>...</div>
-);
+
+const post = () => <div className={classes.Post}>...</div>;
 ```
 
 Here, `classes.Post` refers to an automatically generated `Post` property on the imported `classes` object. That property will in the end simply hold a value like `Post__Post__ah5_1` .
@@ -428,7 +418,9 @@ By the way, if you somehow also want to define a global (i.e. un-transformed) CS
 **Example:**
 
 ```css
-:global .Post { ... }
+:global .Post {
+  ...;
+}
 ```
 
 Now you can use `className="Post"` anywhere in your app and receive that styling.
@@ -438,3 +430,14 @@ Now you can use `className="Post"` anywhere in your app and receive that styling
 ### 78. Understanding Error Messages
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094604
+
+### 79. Finding Logical Errors by using Dev Tools & Sourcemaps
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094606
+
+### 80. Working with the React Developer Tools
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8094608
+
+React has a nice [Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+for debugging purposes.
