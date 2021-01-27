@@ -483,3 +483,10 @@ https://kutt.it/vHZwyJ
 ![image-20210127093537470](https://cdn.jsdelivr.net/gh/carlba/assets@master/N6vvcs-image-20210127093537470.png)
 
 ![image-20210127094327611](https://cdn.jsdelivr.net/gh/carlba/assets@master/ZwuilH-image-20210127094327611.png)
+
+### 90. Component Creation Lifecycle in Action
+
+https://kutt.it/oa1Vez
+
+* When the rendering method of a component is called it just means that Reacts virtual dom will be rerendered. The real DOM will only get updated if React sees the need for it.
+
