@@ -460,8 +460,6 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556244
 
-
-
 ### 87. Comparing Stateless and Stateful Components
 
 https://kutt.it/MHhUyA
@@ -470,3 +468,8 @@ https://kutt.it/MHhUyA
 * Eventhough functional components support state nowadays presentaitional component should still be prefered.
 * Try to limit youself to a couple of components that are involved in the state managnment.
 
+### 88. Class-based vs Functional Components
+
+https://kutt.it/qxA6yI
+
+![image-20210127092729210](https://cdn.jsdelivr.net/gh/carlba/assets@master/Wl7jq6-image-20210127092729210.png)
