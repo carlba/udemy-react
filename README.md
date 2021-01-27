@@ -459,3 +459,14 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 ### 86. Splitting an App Into Components
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556244
+
+
+
+### 87. Comparing Stateless and Stateful Components
+
+https://kutt.it/MHhUyA
+
+* A component can use state either by using the `this.state` property in a class based component or by using the `useState()` function.
+* Eventhough functional components support state nowadays presentaitional component should still be prefered.
+* Try to limit youself to a couple of components that are involved in the state managnment.
+
