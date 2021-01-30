@@ -650,3 +650,9 @@ https://kutt.it/mf6VOe
 
 
 
+### 102. Rendering Adjacent JSX Elements
+
+https://kutt.it/e5ZHMK
+
+<iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-adjecent-jsx-elements-with-aux-component?file=src/App.js">
+
