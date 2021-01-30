@@ -603,7 +603,7 @@ https://kutt.it/7SKooX
 
 https://kutt.it/fuE3Ak
 
-### 97. Using shouldComponentUpdate for Optimization
+### 97. Using shouldComponentUpdate for Optimisation
 
 https://kutt.it/zA6Vsf
 
@@ -618,9 +618,15 @@ A good way to optimize performance is to prevent changes to certain components f
 
 **NOTE** that this only does a shallow comparison 
 
+### 98. Optimizing Functional Components with React.memo()
 
+https://kutt.it/X25cAW
 
+`React.memo(Component)` can be sued to  prevent child components from re rendering. It matches all props (shallow only).It is possible to use the second argument to we can decide how the equality check is done.
 
+```jsx
+React.memo(Component, [areEqual(prevProps, nextProps)]);
+```
 
 
 

@@ -26,11 +26,11 @@ const Cockpit = props => {
     buttonClass = styles.red;
   }
 
-  if (props.persons.length <= 2) {
+  if (props.personsLength <= 2) {
     classes.push(styles.red);
   }
 
-  if (props.persons.length <= 1) {
+  if (props.personsLength <= 1) {
     classes.push(styles.bold);
   }
 
