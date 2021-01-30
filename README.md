@@ -783,5 +783,6 @@ const Div = () => {
 };
 ```
 
+### 112. Understanding Prop Chain Problems
 
-
+https://kutt.it/NXQ10U

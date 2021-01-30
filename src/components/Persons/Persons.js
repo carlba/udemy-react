@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 
 import Person from './Person/Person';
 
-class Persons extends Component {
+class Persons extends PureComponent {
   // static getDerivedStateFromProps(props, state) {
   //   console.log('[Person.js] getDerivedStateFromProps()');
   //   return state;
   // }
 
   /**
-   * Will determine if the component will run the update cycle or not.
+   * Will determine if the component will run the update cycle or not. Use PureComponent
+   * most when you want to compare all props on change. This is for when you need
+   * more fine grain control.
    * @param {*} nextProps
    */
-  shouldComponentUpdate(nextProps) {
-    console.log('[Person.js] shouldComponentUpdate()');
-    return nextProps.persons !== this.props.persons;
-  }
+  // shouldComponentUpdate(nextProps) {
+  //   console.log('[Person.js] shouldComponentUpdate()');
+  //   // return nextProps.persons !== this.props.persons;
+  //   return true;
+  // }
 
   /**
    * This will allow you to create a snapshot that can then be retrieved in the
@@ -51,6 +54,7 @@ class Persons extends Component {
         age={person.age}
         changed={event => this.props.changed(event, person.id)}
         key={person.id}
+        isAuthenticated={this.props.isAuthenticated}
       />
     ));
   }
