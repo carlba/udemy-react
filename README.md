@@ -603,5 +603,24 @@ https://kutt.it/7SKooX
 
 https://kutt.it/fuE3Ak
 
+### 97. Using shouldComponentUpdate for Optimization
+
+https://kutt.it/zA6Vsf
+
+A good way to optimize performance is to prevent changes to certain components from affecting other parts of the application. A good way of doing that is to use the `shouldComponentUpdate()` life cycle hook. By configuring a condition for the update we can prevent a component from being rendered if it's content hasn't been changed.
+
+```jsx
+  shouldComponentUpdate(nextProps) {
+    console.log('[Person.js] shouldComponentUpdate()');
+    return nextProps.persons !== this.props.persons;
+  }
+```
+
+**NOTE** that this only does a shallow comparison 
+
+
+
+
+
 
 
