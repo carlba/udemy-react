@@ -681,10 +681,10 @@ export default WithClass;
 Another way of achieving the same way is doing this.
 
 ```jsx
-const WithClass = (WrappedComponent, className) => {
+const withClass = (WrappedComponent, className) => {
   return props => 
     (<div className={className}>
-    	<WrappedComponent />
+    	<WrappedComponent ...props />
     </div>)
 };
 ```
@@ -697,4 +697,22 @@ The default export must then be wrapped instead.
 
 * The inline JSX method should be used for HOC functions that add things into the HTML.
 * The second approach for things that adds logic.
+
+#### 107. Passing Unknown Props
+
+https://kutt.it/6b3Af7
+
+**When using the second method it will be necessary to pass along props through the wrapper component, like so:**
+
+```jsx
+const withClass = (WrappedComponent, className) => {
+  return props => (
+    <div className={className}>
+      <WrappedComponent {...props} />
+    </div>
+  );
+};
+```
+
+The spread operator allows all incoming props to also exist on the returned component.
 
