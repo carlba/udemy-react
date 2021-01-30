@@ -761,5 +761,13 @@ Component.propTypes = {
 };
 ```
 
+### 110. Using Refs
+
+https://kutt.it/kzAbtk
+
+Use refs to get a hold of a specific component through the template.
+
+<iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-template-class-based?embed=1&file=src/App.js"></iframe>
+
 
 
