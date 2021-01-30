@@ -35,6 +35,13 @@ class Persons extends Component {
   componentDidUpdate(prevProps, prevSate, snapshot) {
     console.log('[Person.js] componentDidUpdate()', snapshot);
   }
+
+  /**
+   * Triggered before component is destroyed/unmounted
+   */
+  componentWillUnmount() {
+    console.log('[Person.js] componentWillUnmount()');
+  }
   render() {
     console.log('[Persons.js] render()');
     return this.props.persons.map((person, index) => (

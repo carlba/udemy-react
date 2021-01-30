@@ -15,7 +15,8 @@ class App extends Component {
       { id: 'wtasdf', name: 'Johanna', age: 32 },
       { id: 'basdss', name: 'Tobias', age: 27 }
     ],
-    showPersons: false
+    showPersons: false,
+    showCockPit: true
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -23,7 +24,19 @@ class App extends Component {
     return state;
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
+    console.log('[App.js] componentDidUpdate()');
+  }
+
+  shouldComponentUpdate() {
+    console.log('[App.js] shouldComponentUpdate()');
+    return true;
+  }
+
+  /**
+   * Called before component is unmounted/destroyed
+   */
+  componentDidUnMount() {
     console.log('[App.js] componentDidMount()');
   }
 
@@ -60,12 +73,15 @@ class App extends Component {
 
     return (
       <div className={styles.App}>
-        <Cockpit
-          title={this.props.appTitle}
-          persons={this.state.persons}
-          showPersons={this.state.showPersons}
-          clicked={this.togglePersonsHandler}
-        ></Cockpit>
+        <button onClick={() => this.setState({ showCockPit: false })}>Remove Cockpit</button>
+        {this.state.showCockPit ? (
+          <Cockpit
+            title={this.props.appTitle}
+            persons={this.state.persons}
+            showPersons={this.state.showPersons}
+            clicked={this.togglePersonsHandler}
+          ></Cockpit>
+        ) : null}
         {persons}
       </div>
     );

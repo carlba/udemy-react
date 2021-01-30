@@ -490,12 +490,13 @@ https://kutt.it/oa1Vez
 
 * When the rendering method of a component is called it just means that Reacts virtual dom will be rerendered. The real DOM will only get updated if React sees the need for it.
 
-### 91. Component Update Lifecycle (for props Changes)
+### 91-92. Component Update Lifecycle
 
 https://kutt.it/4XIrOH
 
 * Components are updated on state and props change
 * The most used hook by far is the `componentDidUpdate()`
+* shouldComponentUpdate() can be used determine if a component should run it's update cycle or not.
 
 ![image-20210127101131818](https://cdn.jsdelivr.net/gh/carlba/assets@master/qNvh4R-image-20210127101131818.png)
 
@@ -556,4 +557,49 @@ class Persons extends Component {
 export default Persons;
 
 ```
+
+### 93-94. Using useEffect() in Functional Components
+
+https://kutt.it/SxwZHQ
+
+https://kutt.it/hc6DT1
+
+* `useEffect()` combines all functionality provided in the class based life cycle hooks into one function
+
+* `useEffect()` is called on each change and also once when the page is loaded
+
+* The second argument of useEffect() is an array of parts of the props that will control what part of the props will trigger the effect.
+
+  ```jsx
+    useEffect(() => {
+      console.log('[Cockpit.js] useEffect()');
+  
+      setTimeout(() => alert('Saved data to cloud!'), 1000);
+    }, [props.persons]);
+  ```
+
+* If an empty array is passed as the second argument the effect will only trigger when the component is loaded.
+
+* If a function is returned from the `useEffect()` callback method. That function will be executed afther the component has been unmounted/destroyed.
+
+<iframe height=600px src="https://stackblitz.com/edit/carlba-js-react-useeffect?embed=1&file=src/App.js"></iframe>
+
+### 95.Cleaning up with Lifecycle Hooks & useEffect()
+
+https://kutt.it/7SKooX
+
+* In a ClassBased component `componentDidUnMount()` is called before a component is destroyed.
+
+* If a function is returned from the `useEffect()` callback method. That function will be executed afther the component has been unmounted/destroyed.
+
+  ```jsx
+    useEffect(() => {
+      console.log("[Component] change")
+      return () => console.log('[Component] cleanup')
+    });
+  ```
+
+  
+
+
 
