@@ -633,13 +633,20 @@ https://kutt.it/X25cAW
 ```jsx
 React.memo(Component, [areEqual(prevProps, nextProps)]);
 ```
-
-
-
 ### 99. When should you update?
 
 https://kutt.it/FviY79
 https://dmitripavlutin.com/use-react-memo-wisely/
 
 Only optimize if there are things outside the component that could trigger a re render even though it is not needed.
+
+
+
+### 101. How React Updates the DOM
+
+https://kutt.it/mf6VOe
+
+![image-20210130194057018](https://cdn.jsdelivr.net/gh/carlba/assets@master/uxQB3f-image-20210130194057018.png)
+
+
 
