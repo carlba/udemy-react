@@ -17,7 +17,8 @@ class App extends Component {
       { id: 'basdss', name: 'Tobias', age: 27 }
     ],
     showPersons: false,
-    showCockPit: true
+    showCockPit: true,
+    changeCounter: 0
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -45,7 +46,10 @@ class App extends Component {
     const persons = [...this.state.persons].map(person =>
       person.id !== id ? person : { ...person, name: event.target.value }
     );
-    this.setState({ persons });
+    this.setState((prevState, props) => ({
+      persons,
+      changeCounter: prevState.changeCounter + 1
+    }));
   };
 
   deletePersonHandler = personIndex => {

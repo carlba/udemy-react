@@ -716,3 +716,31 @@ const withClass = (WrappedComponent, className) => {
 
 The spread operator allows all incoming props to also exist on the returned component.
 
+### 108. Setting State Correctly
+
+https://kutt.it/eOox42
+
+If the state is set like this in Class Based components:
+
+```jsx
+    this.setState({
+      persons,
+      changeCounter: this.state..changeCounter + 1
+    });
+```
+
+React does not guarntee that this.state contains the latest state which can lead to bad bugs. The below syntax guarantees that you use the previous state.
+
+```jsx
+this.setState((prevState, props) => ({
+  persons,
+  changeCounter: prevState.changeCounter + 1
+}));
+```
+
+**Please ensure this is only used when the updated states needs to build on the previous state.**
+
+
+
+
+
