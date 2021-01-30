@@ -603,7 +603,7 @@ https://kutt.it/7SKooX
 
 https://kutt.it/fuE3Ak
 
-### 97. Using shouldComponentUpdate for Optimisation
+### 97. Using shouldComponentUpdate or PureComponent for Optimisation
 
 https://kutt.it/zA6Vsf
 
@@ -618,6 +618,12 @@ A good way to optimize performance is to prevent changes to certain components f
 
 **NOTE** that this only does a shallow comparison 
 
+A better alternative if you just want to check if any of the props for a component has changed is to extend the class based component from `PureComponent`
+
+https://kutt.it/0aKROa
+
+
+
 ### 98. Optimizing Functional Components with React.memo()
 
 https://kutt.it/X25cAW
@@ -629,4 +635,11 @@ React.memo(Component, [areEqual(prevProps, nextProps)]);
 ```
 
 
+
+### 99. When should you update?
+
+https://kutt.it/FviY79
+https://dmitripavlutin.com/use-react-memo-wisely/
+
+Only optimize if there are things outside the component that could trigger a re render even though it is not needed.
 
