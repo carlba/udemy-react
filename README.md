@@ -490,3 +490,70 @@ https://kutt.it/oa1Vez
 
 * When the rendering method of a component is called it just means that Reacts virtual dom will be rerendered. The real DOM will only get updated if React sees the need for it.
 
+### 91. Component Update Lifecycle (for props Changes)
+
+https://kutt.it/4XIrOH
+
+* Components are updated on state and props change
+* The most used hook by far is the `componentDidUpdate()`
+
+![image-20210127101131818](https://cdn.jsdelivr.net/gh/carlba/assets@master/qNvh4R-image-20210127101131818.png)
+
+```jsx
+// src/components/Persons/Persons.js
+
+import React, { Component } from 'react';
+
+import Person from './Person/Person';
+
+class Persons extends Component {
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log('[Person.js] getDerivedStateFromProps()');
+  //   return state;
+  // }
+
+  /**
+   * Will determine if the component will run the update cycle or not.
+   * @param {*} nextProps
+   */
+  shouldComponentUpdate(nextProps) {
+    console.log('[Person.js] shouldComponentUpdate()');
+    return true;
+  }
+
+  /**
+   * This will allow you to create a snapshot that can then be retrieved in the
+   * componentDidUpdate lifecycle hook.
+   * @param {*} prevProps
+   * @param {*} prevSate
+   */
+  getSnapshotBeforeUpdate(prevProps, prevSate) {
+    console.log('[Person.js] shouldComponentUpdate()');
+    return { message: 'Snapshot!' };
+  }
+
+  /**
+   * Triggered after the component updated also has the snapshot set in
+   * getSnapshotBeforeUpdate
+   */
+  componentDidUpdate(prevProps, prevSate, snapshot) {
+    console.log('[Person.js] componentDidUpdate()', snapshot);
+  }
+  render() {
+    console.log('[Persons.js] render()');
+    return this.props.persons.map((person, index) => (
+      <Person
+        click={() => this.props.clicked(index)}
+        name={person.name}
+        age={person.age}
+        changed={event => this.props.changed(event, person.id)}
+        key={person.id}
+      />
+    ));
+  }
+}
+
+export default Persons;
+
+```
+

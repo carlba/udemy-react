@@ -1,18 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Person from './Person/Person';
 
-const persons = props => {
-  console.log('[Persons.js] render()');
-  return props.persons.map((person, index) => (
-    <Person
-      click={() => props.clicked(index)}
-      name={person.name}
-      age={person.age}
-      changed={event => props.changed(event, person.id)}
-      key={person.id}
-    />
-  ));
-};
+class Persons extends Component {
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log('[Person.js] getDerivedStateFromProps()');
+  //   return state;
+  // }
 
-export default persons;
+  /**
+   * Will determine if the component will run the update cycle or not.
+   * @param {*} nextProps
+   */
+  shouldComponentUpdate(nextProps) {
+    console.log('[Person.js] shouldComponentUpdate()');
+    return true;
+  }
+
+  /**
+   * This will allow you to create a snapshot that can then be retrieved in the
+   * componentDidUpdate lifecycle hook.
+   * @param {*} prevProps
+   * @param {*} prevSate
+   */
+  getSnapshotBeforeUpdate(prevProps, prevSate) {
+    console.log('[Person.js] shouldComponentUpdate()');
+    return { message: 'Snapshot!' };
+  }
+
+  /**
+   * Triggered after the component updated also has the snapshot set in
+   * getSnapshotBeforeUpdate
+   */
+  componentDidUpdate(prevProps, prevSate, snapshot) {
+    console.log('[Person.js] componentDidUpdate()', snapshot);
+  }
+  render() {
+    console.log('[Persons.js] render()');
+    return this.props.persons.map((person, index) => (
+      <Person
+        click={() => this.props.clicked(index)}
+        name={person.name}
+        age={person.age}
+        changed={event => this.props.changed(event, person.id)}
+        key={person.id}
+      />
+    ));
+  }
+}
+
+export default Persons;
