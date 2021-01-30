@@ -650,9 +650,14 @@ https://kutt.it/mf6VOe
 
 
 
-### 102. Rendering Adjacent JSX Elements
+### 102. Rendering Adjacent JSX Elements With React.Fragment
 
 https://kutt.it/e5ZHMK
+https://kutt.it/cfRvO7
+
+An `Aux` component can be used to wrap elements without having to add a redundant div. 
 
 <iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-adjecent-jsx-elements-with-aux-component?file=src/App.js">
+
+**In later versions of React there is an inbuilt component called `React.Fragment` use that instead.**
 
