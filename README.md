@@ -740,7 +740,26 @@ this.setState((prevState, props) => ({
 
 **Please ensure this is only used when the updated states needs to build on the previous state.**
 
+### 109. Using PropTypes
 
+https://kutt.it/saTk2j
+
+Runtime type enforcing.
+
+```bash
+npm install --save prop-types
+```
+
+The types are declared by adding a type declaring object to any component, like this:
+
+```jsx
+Component.propTypes = {
+  click: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  changed: PropTypes.func
+};
+```
 
 
 
