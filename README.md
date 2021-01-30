@@ -658,6 +658,43 @@ https://kutt.it/cfRvO7
 An `Aux` component can be used to wrap elements without having to add a redundant div. 
 
 <iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-adjecent-jsx-elements-with-aux-component?file=src/App.js">
-
 **In later versions of React there is an inbuilt component called `React.Fragment` use that instead.**
+
+### 105. Higher Order Components (HOC) - Introduction
+
+https://kutt.it/Dm4Boq
+
+https://kutt.it/eWNKvK
+
+An higher order component is a component that wraps an other component and modifies it's behaviour in some way. A super simplistic example can be found below.
+
+```jsx
+import React from 'react';
+
+const WithClass = props => <div className={props.classes}>{props.children}</div>;
+const Component = props => <WithClass classes={'red'}></WithClass>
+
+export default WithClass;
+
+```
+
+Another way of achieving the same way is doing this.
+
+```jsx
+const WithClass = (WrappedComponent, className) => {
+  return props => 
+    (<div className={className}>
+    	<WrappedComponent />
+    </div>)
+};
+```
+
+```jsx
+export default withClass(App, styles.App);
+```
+
+The default export must then be wrapped instead.
+
+* The inline JSX method should be used for HOC functions that add things into the HTML.
+* The second approach for things that adds logic.
 

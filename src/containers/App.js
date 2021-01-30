@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styles from './App.module.css';
 
+import withClass from '../hoc/withClass';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
@@ -72,7 +73,7 @@ class App extends Component {
     }
 
     return (
-      <div className={styles.App}>
+      <Fragment>
         <button onClick={() => this.setState({ showCockPit: false })}>Remove Cockpit</button>
         {this.state.showCockPit ? (
           <Cockpit
@@ -83,9 +84,9 @@ class App extends Component {
           ></Cockpit>
         ) : null}
         {persons}
-      </div>
+      </Fragment>
     );
   }
 }
 
-export default App;
+export default withClass(App, styles.App);
