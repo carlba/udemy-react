@@ -448,6 +448,12 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 ## Section 7: Diving Deeper into Components & React Internals
 
+- More on useEffect(): https://reactjs.org/docs/hooks-effect.html
+- State & Lifecycle: https://reactjs.org/docs/state-and-lifecycle.html
+- PropTypes: https://reactjs.org/docs/typechecking-with-proptypes.html
+- Higher Order Components: https://reactjs.org/docs/higher-order-components.html
+- Refs: https://reactjs.org/docs/refs-and-the-dom.html
+
 ### 85. A Better Project Structure
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8103728
