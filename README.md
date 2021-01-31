@@ -841,9 +841,39 @@ And can finally be accessed from any component within the outer wrapper, like so
 
 **NOTE** `AuthContext.Consumer` will put the content into a function that needs to be nested within it.
 
+### 114. contextType & useContext()
 
+https://kutt.it/MtDZd3
 
+A nicer alternative to the above approach is to connect the context to the component using the static property `contextType`. By doing this the context will be available both in the component and in the template in the `this.context` property.
 
+```jsx
+class Person extends Component {
+  static contextType = AuthContext;
 
+  componentDidMount() {
+    console.log(this.context.authenticated)
+  }
+  render() {
+    return (
+      <Aux className={styles.Person}>
+        {this.context.authenticated ? <p>Authenticated</p> : <p>Please log in</p>}
+      </Aux>
+    );
+  }
+}
+```
 
+In a functional component the same can be accomplished using the useContext() hook.
+
+```jsx
+const Cockpit = props => {  
+  const authContext = useContext(AuthContext);
+  return (
+    <div className={styles.Cockpit}>
+      <button onClick={authContext.login}>Log In</button>
+    </div>
+  );
+}
+```
 
