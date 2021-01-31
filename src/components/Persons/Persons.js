@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 import Person from './Person/Person';
 
@@ -54,7 +54,6 @@ class Persons extends PureComponent {
         age={person.age}
         changed={event => this.props.changed(event, person.id)}
         key={person.id}
-        isAuthenticated={this.props.isAuthenticated}
       />
     ));
   }

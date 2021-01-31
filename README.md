@@ -503,24 +503,27 @@ https://kutt.it/4XIrOH
 ```jsx
 // src/components/Persons/Persons.js
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Person from './Person/Person';
 
-class Persons extends Component {
+class Persons extends PureComponent {
   // static getDerivedStateFromProps(props, state) {
   //   console.log('[Person.js] getDerivedStateFromProps()');
   //   return state;
   // }
 
   /**
-   * Will determine if the component will run the update cycle or not.
+   * Will determine if the component will run the update cycle or not. Use PureComponent
+   * most when you want to compare all props on change. This is for when you need
+   * more fine grain control.
    * @param {*} nextProps
    */
-  shouldComponentUpdate(nextProps) {
-    console.log('[Person.js] shouldComponentUpdate()');
-    return true;
-  }
+  // shouldComponentUpdate(nextProps) {
+  //   console.log('[Person.js] shouldComponentUpdate()');
+  //   // return nextProps.persons !== this.props.persons;
+  //   return true;
+  // }
 
   /**
    * This will allow you to create a snapshot that can then be retrieved in the
@@ -539,6 +542,13 @@ class Persons extends Component {
    */
   componentDidUpdate(prevProps, prevSate, snapshot) {
     console.log('[Person.js] componentDidUpdate()', snapshot);
+  }
+
+  /**
+   * Triggered before component is destroyed/unmounted
+   */
+  componentWillUnmount() {
+    console.log('[Person.js] componentWillUnmount()');
   }
   render() {
     console.log('[Persons.js] render()');
@@ -786,3 +796,54 @@ const Div = () => {
 ### 112. Understanding Prop Chain Problems
 
 https://kutt.it/NXQ10U
+
+### 113. Using the Context API
+
+https://kutt.it/8hM8DA
+
+The context API allows us to create an object that can be accessed from all other components.
+
+* Changing a context object does not re render the DOM.
+
+A context is created, like so:
+
+```jsx
+// src/context/auth-context.js
+
+import React from 'react';
+
+const authContext = React.createContext({ authenticated: false, login: () => {} });
+
+export default authContext;
+
+```
+
+A `AuthContext.Provider` component must wrap all components that are going to use the context. A value must also be passed into the `Provider` thus making it available anywhere in the scope of the wrapper. 
+
+```jsx
+<AuthContext.Provider
+  value={{ authenticated: this.state.authenticated, login: this.loginHandler }}
+  >
+  <Component></Component>
+  <Component2></Component2>
+</AuthContext.Provider>  
+```
+
+And can finally be accessed from any component within the outer wrapper, like so:
+
+```jsx
+<AuthContext.Consumer>
+  {context => {
+    return context.authenticated ? <p>Authenticated</p> : <p>Please log in</p>;
+  }}
+</AuthContext.Consumer>
+```
+
+**NOTE** `AuthContext.Consumer` will put the content into a function that needs to be nested within it.
+
+
+
+
+
+
+
