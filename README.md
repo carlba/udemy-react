@@ -883,3 +883,24 @@ const Cockpit = props => {
 }
 ```
 
+### 119. Planning an App in React - Core Steps
+
+https://kutt.it/VLS3GK
+
+![image-20210131231456629](https://cdn.jsdelivr.net/gh/carlba/assets@master/ZKZsFl-image-20210131231456629.png)
+
+
+
+### 120. Planning our App - Layout and Component Tree
+
+https://kutt.it/ZxlWQ7
+
+![image-20210131233310542](https://cdn.jsdelivr.net/gh/carlba/assets@master/jizj9T-image-20210131233310542.png)
+
+### 121. Planning the State
+
+https://kutt.it/b2rBHp
+
+* The state will be managed at the level of the `BurgerBuilder` since it isn't really interesting for the other components outside of it.
+* The Burger builder will be a stateful container component. The rest of it with be presentational components.
+
