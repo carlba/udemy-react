@@ -939,3 +939,7 @@ https://kutt.it/bpgrFI
 ### 130. Calculating the Ingredient Sum Dynamically
 
 https://kutt.it/o6ZYFn
+
+### 131. Adding the Build Control Component
+
+https://kutt.it/Ashjuz
