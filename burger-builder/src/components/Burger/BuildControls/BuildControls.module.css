@@ -4,6 +4,6 @@
   display: flex;
   flex-flow: column;
   box-shadow: 0 2px #ccc;
-  margin: auto;
+  align-items: center;
   padding: 10px 0;
 }
