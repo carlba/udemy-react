@@ -943,3 +943,8 @@ https://kutt.it/o6ZYFn
 ### 131. Adding the Build Control Component
 
 https://kutt.it/Ashjuz
+
+### 132. Outputting Multiple Build Controls
+
+https://kutt.it/wlgxgd
+
