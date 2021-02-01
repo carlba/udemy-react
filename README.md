@@ -935,3 +935,7 @@ https://kutt.it/E9SAM3
 ### 129. Outputting Burger Ingredients Dynamically
 
 https://kutt.it/bpgrFI
+
+### 130. Calculating the Ingredient Sum Dynamically
+
+https://kutt.it/o6ZYFn
