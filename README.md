@@ -915,3 +915,8 @@ https://kutt.it/Vb38Xz
 ### 125. Starting Implementation of The Burger Builder Container
 
 https://kutt.it/yX9Ndc
+
+### 126. Adding a Dynamic Ingredient Component
+
+https://kutt.it/yWPZGe
+
