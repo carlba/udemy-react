@@ -771,11 +771,15 @@ The types are declared by adding a type declaring object to any component, like 
 ```jsx
 Component.propTypes = {
   click: PropTypes.func,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   age: PropTypes.number,
   changed: PropTypes.func
 };
 ```
+
+* isRequired can be chained to a type to indicate that the prop is mandatory
+
+
 
 ### 110. Using Refs
 
@@ -919,4 +923,8 @@ https://kutt.it/yX9Ndc
 ### 126. Adding a Dynamic Ingredient Component
 
 https://kutt.it/yWPZGe
+
+### 127. Adding Prop Type Validation
+
+https://kutt.it/JwHtN2
 

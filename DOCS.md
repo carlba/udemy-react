@@ -64,6 +64,33 @@ const App = (props) => (
 )
 ```
 
+### Validation
+
+Validation can be done by using the `prop-types ` NPM package.
+
+```jsx
+npm install --save prop-types
+```
+
+The props of a component can then be validated, like so:
+
+```jsx
+const Component = () => (
+	<div>My Component</div>
+)
+
+Component.propTypes = {
+  click: PropTypes.func,
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+  changed: PropTypes.func
+};
+
+export default Component;
+```
+
+* isRequired can be chained to a type to indicate that the prop is mandatory
+
 ### Higher Order Components
 
 * Adjacent DOM elements can be rendered in a React component by wrapping them in the `React.Fragment` HOC provided by React, like so:
