@@ -931,3 +931,7 @@ https://kutt.it/JwHtN2
 ### 128. Starting the Burger Component
 
 https://kutt.it/E9SAM3
+
+### 129. Outputting Burger Ingredients Dynamically
+
+https://kutt.it/bpgrFI
