@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types;';
+import PropTypes from 'prop-types';
 
-import styles from './BurgerIngredient.module';
+import styles from './BurgerIngredient.module.css';
 
 const BurgerIngredient = props => {
   let ingredient = null;
@@ -32,6 +32,7 @@ const BurgerIngredient = props => {
     default:
       ingredient = null;
   }
+  return ingredient;
 };
 
 BurgerIngredient.propTypes = {
