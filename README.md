@@ -948,3 +948,6 @@ https://kutt.it/Ashjuz
 
 https://kutt.it/wlgxgd
 
+### 133. Connecting State to Build Controls
+
+https://kutt.it/Bzj0H4
