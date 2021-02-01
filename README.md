@@ -908,3 +908,6 @@ https://kutt.it/b2rBHp
 
 https://kutt.it/cLLBHO
 
+### 124. Creating a Layout Component
+
+https://kutt.it/Vb38Xz
