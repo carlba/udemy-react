@@ -961,3 +961,6 @@ https://kutt.it/8sF72g
 ### 135. Displaying and Updating the Burger Price
 
 https://kutt.it/niSTRg
+
+When accessing this.state in a Class based component there are no guarantees that the state
+contains the latest information. 
