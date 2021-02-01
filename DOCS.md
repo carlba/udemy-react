@@ -91,6 +91,12 @@ export default Component;
 
 * isRequired can be chained to a type to indicate that the prop is mandatory
 
+### Toggling Elements
+
+* Toggling elements in React can be done by maintaining a state representing the button and binding the standard HTML property `disabled` to it.
+
+<iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-template-disable-button?embed=1&file=src/App.js"></iframe>
+
 ### Higher Order Components
 
 * Adjacent DOM elements can be rendered in a React component by wrapping them in the `React.Fragment` HOC provided by React, like so:
