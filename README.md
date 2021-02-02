@@ -1018,3 +1018,7 @@ https://kutt.it/QSwAXd
 ### 146. Creating a Responsive Sidedrawer
 
 https://kutt.it/z3k3Zk
+
+### 147. Working on Responsive Adjustments
+
+https://kutt.it/ke8Jay
