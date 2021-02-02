@@ -64,6 +64,26 @@ const App = (props) => (
 )
 ```
 
+### Class Based
+
+It is not possible to use the true function body approach for event handler in class based components.
+
+```jsx
+  purchaseHandler() {
+    this.setState({ isOrdering: true });
+  };
+```
+
+The `this` keyword will not be availible where the event handler is used. Therefore stick to arrow functions for methods in React.
+
+```jsx
+  purchaseHandler = () => {
+    this.setState({ isOrdering: true });
+  };
+```
+
+
+
 ### Validation
 
 Validation can be done by using the `prop-types ` NPM package.

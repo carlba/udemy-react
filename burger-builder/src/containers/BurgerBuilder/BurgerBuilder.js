@@ -21,12 +21,13 @@ class BurgerBuilder extends Component {
       meat: 0
     },
     totalPrice: 4,
-    isReadyToOrder: false
+    isReadyToOrder: false,
+    isOrdering: false
   };
 
   updateIsReadyToOrder(ingredients) {
     this.setState({
-      isReadyToOrder: Object.values(ingredients).every(amount => amount === 0)
+      isReadyToOrder: !Object.values(ingredients).every(amount => amount === 0)
     });
   }
 
@@ -53,13 +54,17 @@ class BurgerBuilder extends Component {
     this.updateIsReadyToOrder(updatedState.ingredients);
   };
 
+  purchaseHandler = () => {
+    this.setState({ isOrdering: true });
+  };
+
   render() {
     const disabledInfo = Object.entries(this.state.ingredients).reduce((acc, [key, value]) => {
       return { ...acc, [key]: value <= 0 };
     }, {});
     return (
       <React.Fragment>
-        <Modal>
+        <Modal show={this.state.isOrdering} disabled={this.state.isOrdering}>
           <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
         </Modal>
         <Burger ingredients={this.state.ingredients} />
@@ -68,6 +73,8 @@ class BurgerBuilder extends Component {
           ingredientRemoved={this.removeIngredientHandler}
           disabledInfo={disabledInfo}
           isReadyToOrder={this.state.isReadyToOrder}
+          isOrdering={this.state.isOrdering}
+          ordered={this.purchaseHandler}
           price={this.state.totalPrice}
         ></BuildControls>
       </React.Fragment>

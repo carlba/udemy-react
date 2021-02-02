@@ -969,3 +969,6 @@ contains the latest information.
 
 https://kutt.it/tlBNCU
 
+### 138. Showing & Hiding the Modal (with Animation!)
+
+https://kutt.it/YqHOPk
