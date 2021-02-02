@@ -964,3 +964,8 @@ https://kutt.it/niSTRg
 
 When accessing this.state in a Class based component there are no guarantees that the state
 contains the latest information. 
+
+### 137. Creating the Order Summary Modal
+
+https://kutt.it/tlBNCU
+
