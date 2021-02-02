@@ -6,7 +6,7 @@ import styles from './Modal.module.css';
 
 const Modal = props => (
   <React.Fragment>
-    <Backdrop show={props.show} clicked={props.modalClosed} />
+    <Backdrop show={props.show} onBackdropClick={props.onModalClose} />
     <div
       className={styles.Modal}
       style={{

@@ -5,10 +5,10 @@ import styles from './BuildControl.module.css';
 const BuildControl = props => (
   <div className={styles.BuildControl}>
     <div className={styles.Label}>{props.label}</div>
-    <button className={styles.Less} onClick={props.ingredientRemoved} disabled={props.disabled}>
+    <button className={styles.Less} onClick={props.onIngredientRemove} disabled={props.disabled}>
       Less
     </button>
-    <button className={styles.More} onClick={props.ingredientAdded}>
+    <button className={styles.More} onClick={props.onIngredientAdd}>
       More
     </button>
   </div>

@@ -31,7 +31,7 @@ class BurgerBuilder extends Component {
     });
   }
 
-  addIngredientHandler = type => {
+  handleAddIngredient = type => {
     const updatedCount = this.state.ingredients[type] + 1;
     const updatedState = {
       ingredients: { ...this.state.ingredients, [type]: updatedCount },
@@ -41,7 +41,7 @@ class BurgerBuilder extends Component {
     this.updateIsReadyToOrder(updatedState.ingredients);
   };
 
-  removeIngredientHandler = type => {
+  handleRemoveIngredient = type => {
     if (this.state.ingredients[type] <= 0) {
       return;
     }
@@ -54,11 +54,11 @@ class BurgerBuilder extends Component {
     this.updateIsReadyToOrder(updatedState.ingredients);
   };
 
-  purchaseHandler = () => {
+  handleOrder = () => {
     this.setState({ isOrdering: true });
   };
 
-  purchaseCancelHandler = () => {
+  handleOrderCancel = () => {
     this.setState({ isOrdering: false });
   };
 
@@ -71,18 +71,18 @@ class BurgerBuilder extends Component {
         <Modal
           show={this.state.isOrdering}
           disabled={this.state.isOrdering}
-          modalClosed={this.purchaseCancelHandler}
+          onModalClose={this.handleOrderCancel}
         >
           <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
-          ingredientAdded={this.addIngredientHandler}
-          ingredientRemoved={this.removeIngredientHandler}
+          onIngredientAdd={this.handleAddIngredient}
+          onIngredientRemove={this.handleRemoveIngredient}
           disabledInfo={disabledInfo}
           isReadyToOrder={this.state.isReadyToOrder}
           isOrdering={this.state.isOrdering}
-          ordered={this.purchaseHandler}
+          onOrdered={this.handleOrder}
           price={this.state.totalPrice}
         ></BuildControls>
       </React.Fragment>

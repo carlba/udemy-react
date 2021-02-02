@@ -20,12 +20,16 @@ const BuildControls = props => (
         key={control.label}
         type={control.type}
         label={control.label}
-        ingredientAdded={() => props.ingredientAdded(control.type)}
-        ingredientRemoved={() => props.ingredientRemoved(control.type)}
+        onIngredientAdd={() => props.onIngredientAdd(control.type)}
+        onIngredientRemove={() => props.onIngredientRemove(control.type)}
         disabled={props.disabledInfo[control.type]}
       />
     ))}
-    <button className={styles.OrderButton} disabled={!props.isReadyToOrder} onClick={props.ordered}>
+    <button
+      className={styles.OrderButton}
+      disabled={!props.isReadyToOrder}
+      onClick={props.onOrdered}
+    >
       ORDER NOW
     </button>
   </div>

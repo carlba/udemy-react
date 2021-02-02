@@ -23,17 +23,15 @@
       "react-app",
       "react-app/jest"
     ],
-    "rules": {
-      "react/jsx-handler-names": [
-        2,
-        {
-          "eventHandlerPrefix": "handle",
-          "eventHandlerPropPrefix": "on",
-          "checkLocalVariables": true,
-          "checkInlineFunction": true
-        }
-      ]
-    }
+    // "rules": {
+    //   "react/jsx-handler-names": [
+    //     2,
+    //     {
+    //       "checkLocalVariables": true,
+    //       "checkInlineFunction": true
+    //     }
+    //   ]
+    // }
   },
   "browserslist": {
     "production": [

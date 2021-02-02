@@ -140,3 +140,14 @@ export default Component;
 
   
 
+## Code Style
+
+Code style is a matter of personal preference but I think it makes sense to adhere to best practises of the libs and frameworks you are using.
+
+### Event Handler Naming
+
+* Events emitted from a component adheres to how it works in HTML elements. `onclick`, `onchange` and so on. If the user is cancelling the component the outbound prop would be `onCancel`
+* Methods or functions that actually handles emitted events should be prefixed with `handle` so `handleCancel()`
+
+Inspired by [EVENT HANDLER NAMING IN REACT](https://jaketrent.com/post/naming-event-handlers-react) and enforced by these [eslint rules](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md)
+
