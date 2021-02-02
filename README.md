@@ -988,3 +988,7 @@ https://kutt.it/uSaDUa
 ### 142. Adding the Price to the Order Summary
 
 https://kutt.it/QADHK9
+
+### 143. Adding a Toolbar
+
+https://kutt.it/Rhho0G
