@@ -58,13 +58,21 @@ class BurgerBuilder extends Component {
     this.setState({ isOrdering: true });
   };
 
+  purchaseCancelHandler = () => {
+    this.setState({ isOrdering: false });
+  };
+
   render() {
     const disabledInfo = Object.entries(this.state.ingredients).reduce((acc, [key, value]) => {
       return { ...acc, [key]: value <= 0 };
     }, {});
     return (
       <React.Fragment>
-        <Modal show={this.state.isOrdering} disabled={this.state.isOrdering}>
+        <Modal
+          show={this.state.isOrdering}
+          disabled={this.state.isOrdering}
+          modalClosed={this.purchaseCancelHandler}
+        >
           <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
         </Modal>
         <Burger ingredients={this.state.ingredients} />

@@ -972,3 +972,7 @@ https://kutt.it/tlBNCU
 ### 138. Showing & Hiding the Modal (with Animation!)
 
 https://kutt.it/YqHOPk
+
+### 139. Implementing the Backdrop Component
+
+https://kutt.it/Scw2W4
