@@ -1011,4 +1011,6 @@ https://kutt.it/JpkwiQ
   <img src={burgerLogo} alt="" />
   ```
 
-  
+### 145. Adding Reusable Navigation Items
+
+https://kutt.it/QSwAXd
