@@ -62,6 +62,10 @@ class BurgerBuilder extends Component {
     this.setState({ isOrdering: false });
   };
 
+  handleOrderContinue = () => {
+    alert('You continue!');
+  };
+
   render() {
     const disabledInfo = Object.entries(this.state.ingredients).reduce((acc, [key, value]) => {
       return { ...acc, [key]: value <= 0 };
@@ -73,7 +77,11 @@ class BurgerBuilder extends Component {
           disabled={this.state.isOrdering}
           onModalClose={this.handleOrderCancel}
         >
-          <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
+          <OrderSummary
+            ingredients={this.state.ingredients}
+            onOrderCancel={this.handleOrderCancel}
+            onOrderContinue={this.handleOrderContinue}
+          ></OrderSummary>
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls

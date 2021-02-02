@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import Button from '../../ui/Button/Button';
 
 const OrderSummary = props => {
   const ingredientSummary = Object.entries(props.ingredients).reduce(
@@ -16,10 +19,20 @@ const OrderSummary = props => {
       <p>A delicious burger with the following ingredients:</p>
       <ul>{ingredientSummary}</ul>
       <p>Continue to Checkout?</p>
-      <button>CANCEL</button>
-      <button>CONTINUE</button>
+      <Button buttonType="Danger" onClick={props.onOrderCancel}>
+        CANCEL
+      </Button>
+      <Button buttonType="Success" onClick={props.onOrderContinue}>
+        CONTINUE
+      </Button>
     </React.Fragment>
   );
+};
+
+OrderSummary.propTypes = {
+  ingredients: PropTypes.object,
+  onOrderCancel: PropTypes.func,
+  onOrderContinue: PropTypes.func
 };
 
 export default OrderSummary;
