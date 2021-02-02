@@ -279,7 +279,7 @@ div in the input box Two Way Binding is needed.
 <input type="text" onChange={props.changed} value={props.name} />
 ```
 
-<iframe height=600 src="https://stackblitz.com/edit/carlba-react-two-way-binding?embed=1&file=src/App.js"></iframe>
+<iframe height=600 src="https://stackblitz.com/edit/carlba-react-two-way-binding?embed=1&ctl=1&file=src/App.js"></iframe>
 
 ### 48. Adding Styling with Stylesheets
 
@@ -294,7 +294,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091064
 
-<iframe height=400 src="https://stackblitz.com/edit/carlba-react-render-conditionally?embed=1&file=src/App.js&hideExplorer=1"></iframe>
+<iframe height=400 src="https://stackblitz.com/edit/carlba-react-render-conditionally?embed=1&ctl=1&file=src/App.js&hideExplorer=1"></iframe>
 
 - JSX can also contain Javascript code simpler statements such as ternaries can be used when enclosed in `{}`.
 
@@ -302,13 +302,13 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091068
 
-<iframe height=500 src="https://stackblitz.com/edit/carlba-react-render-conditionally-javascript?embed=1&file=src/App.js"></iframe
+<iframe height=500 src="https://stackblitz.com/edit/carlba-react-render-conditionally-javascript?embed=1&ctl=1&file=src/App.js"></iframe
 
 ### 56. Outputting Lists
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091072
 
-<iframe height=500 src="https://stackblitz.com/edit/carlba-react-rendering-list?embed=1&file=src/App.js"></iframe>
+<iframe height=500 src="https://stackblitz.com/edit/carlba-react-rendering-list?embed=1&ctl=1&file=src/App.js"></iframe>
 
 ### 57. Lists & State
 
@@ -353,7 +353,7 @@ Radium is a popular package that allows us to use inline styles with psedo selec
 npm install --save radium
 ```
 
-<iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-radium?embed=1&file=src/App.js&hideExplorer=1"></iframe>
+<iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-radium?embed=1&ctl=1&file=src/App.js&hideExplorer=1"></iframe>
 
 ### 69. Using Radium for Media Queries
 
@@ -367,7 +367,7 @@ Another popular way for styling components is the [Styled Components](https://st
 
 - Install it `npm install --save styled-components`
 
-<iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-styled-components?embed=1&file=src/App.js&hideExplorer=1"></iframe>
+<iframe height=500 src="https://stackblitz.com/edit/carlba-js-react-styled-components?embed=1&ctl=1&file=src/App.js&hideExplorer=1"></iframe>
 
 ### 71. More on Styled Components
 
@@ -377,7 +377,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/1
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/16851076
 
-<iframe height=600 src="https://stackblitz.com/edit/carlba-js-react-css-modules?embed=1&file=src/App.js"></iframe>
+<iframe height=600 src="https://stackblitz.com/edit/carlba-js-react-css-modules?embed=1&ctl=1&file=src/App.js"></iframe>
 
 https://create-react-app.dev/docs/adding-a-css-modules-stylesheet
 
@@ -598,7 +598,7 @@ https://kutt.it/hc6DT1
 
 * If a function is returned from the `useEffect()` callback method. That function will be executed afther the component has been unmounted/destroyed.
 
-<iframe height=600px src="https://stackblitz.com/edit/carlba-js-react-useeffect?embed=1&file=src/App.js"></iframe>
+<iframe height=600px src="https://stackblitz.com/edit/carlba-js-react-useeffect?embed=1&ctl=1&file=src/App.js"></iframe>
 
 ### 95.Cleaning up with Lifecycle Hooks & useEffect()
 
@@ -787,7 +787,7 @@ https://kutt.it/kzAbtk
 
 Use refs to get a hold of a specific component through the template.
 
-<iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-template-class-based?embed=1&file=src/App.js"></iframe>
+<iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-template-class-based?embed=1&ctl=1&file=src/App.js"></iframe>
 
 **111. Use refs in functional components**
 
@@ -956,7 +956,7 @@ https://kutt.it/Bzj0H4
 
 https://kutt.it/8sF72g
 
-<iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-template-disable-button?embed=1&file=src/App.js"></iframe>
+<iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-template-disable-button?embed=1&ctl=1&file=src/App.js"></iframe>
 
 ### 135. Displaying and Updating the Burger Price
 
