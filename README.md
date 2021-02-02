@@ -992,3 +992,23 @@ https://kutt.it/QADHK9
 ### 143. Adding a Toolbar
 
 https://kutt.it/Rhho0G
+
+### 144. Using a Logo in our Application
+
+https://kutt.it/JpkwiQ
+
+* Due to Webpack building it's own structure of our project. It is not possible to directly reference an image using the `src` tag.
+
+* Instead the image needs to be imported thus allowing web pack to be aware of it and including it in the correct way.
+
+  ```jsx
+  import burgerLogo from '../../assets/images/burger-logo';
+  ```
+
+* It is then possible to reference it in the jsx code, like so:
+
+  ```jsx
+  <img src={burgerLogo} alt="" />
+  ```
+
+  
