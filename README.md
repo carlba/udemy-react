@@ -984,3 +984,7 @@ https://kutt.it/35O90j
 ### 141. Implementing the Button Component
 
 https://kutt.it/uSaDUa
+
+### 142. Adding the Price to the Order Summary
+
+https://kutt.it/QADHK9
