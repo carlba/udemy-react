@@ -1056,3 +1056,15 @@ https://kutt.it/FWehgR
 #### 153. Prop Type Validation
 
 https://kutt.it/tHnqnM
+
+* Max thinks it is not necessary to do PropTypes validation. I disagree and have added it in some places.
+
+### 154. Improving Performance
+
+https://kutt.it/VnzH7o
+
+* For most parts it doesn't make much sense since all changes should in general trigger re rendering of the application.
+* The modal should however not be re rendered on changes unless it is shown (you can see that it's state actually changes in the React Components Debug view)
+
+`shouldComponentUpdate()` was utilized for this by checking that the component should only be updated if the show
+state of the modal has changed. This could also be done by `React.memo()`. But trying to follow the course here :)
