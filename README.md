@@ -1273,3 +1273,17 @@ https://kutt.it/x8IHmN
 
 https://udemy-react-burger-build-default-rtdb.firebaseio.com/
 
+### 180. Creating the Axios Instance
+
+https://kutt.it/loXdAR
+
+This is the `axios-orders.js` instance
+
+```jsx
+import axios from 'axios';
+
+axios.create({ baseURL: 'https://udemy-react-burger-build-default-rtdb.firebaseio.com' });
+
+export default axios;
+```
+
