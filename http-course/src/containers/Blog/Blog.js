@@ -33,7 +33,6 @@ class Blog extends Component {
         />
       );
     });
-    console.log(posts);
     return (
       <div>
         <section className="Posts">{posts}</section>

@@ -1137,6 +1137,17 @@ https://kutt.it/ATO3bL
   const response = await axios.post('https://jsonplaceholder.typicode.com/posts', post);
   ```
 
+* And the delete:
+
+  ```jsx
+  handleDeletePost = async () => {
+    const response = await axios.delete(
+      `https://jsonplaceholder.typicode.com/posts/${this.props.id}`
+    );
+    console.log('Response was deleted', response);
+  };
+  ```
+
   
 
 ### 164. Transforming Data
@@ -1155,3 +1166,8 @@ https://kutt.it/HllG0z
 ### 167. POSTing Data to the Server
 
 https://kutt.it/I4TJaT
+
+### 168. Sending a DELETE Request
+
+https://kutt.it/41WTEC
+
