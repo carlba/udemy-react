@@ -1068,3 +1068,8 @@ https://kutt.it/VnzH7o
 
 `shouldComponentUpdate()` was utilized for this by checking that the component should only be updated if the show
 state of the modal has changed. This could also be done by `React.memo()`. But trying to follow the course here :)
+
+### 155. Using Component Lifecycle Methods
+
+https://kutt.it/nQIgAU
+
