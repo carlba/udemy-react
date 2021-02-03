@@ -1171,3 +1171,9 @@ https://kutt.it/I4TJaT
 
 https://kutt.it/41WTEC
 
+### 170. Handling Errors Locally
+
+https://kutt.it/ZhUVZU
+
+* A nice way to handle errors is to set a property `error` in the state to `true` and then show a div or indicating that an error happened.
+
