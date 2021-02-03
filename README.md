@@ -304,6 +304,7 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8
 
 <iframe height=500 src="https://stackblitz.com/edit/carlba-react-render-conditionally-javascript?embed=1&ctl=1&file=src/App.js"></iframe
 
+
 ### 56. Outputting Lists
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8091072
@@ -649,6 +650,7 @@ https://kutt.it/X25cAW
 ```jsx
 React.memo(Component, [areEqual(prevProps, nextProps)]);
 ```
+
 ### 99. When should you update?
 
 https://kutt.it/FviY79
@@ -675,6 +677,7 @@ An `Aux` component can be used to wrap elements without having to add a redundan
 
 <iframe height=500px src="https://stackblitz.com/edit/carlba-js-react-adjecent-jsx-elements-with-aux-component?file=src/App.js">
 **In later versions of React there is an inbuilt component called `React.Fragment` use that instead.**
+
 
 ### 105. Higher Order Components (HOC) - Introduction
 
@@ -1079,3 +1082,7 @@ https://kutt.it/Nopa0L
 
 * Did some minor updates to the folder structure.
 
+
+### 157. Wrap Up
+
+https://kutt.it/7VF02f
