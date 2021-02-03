@@ -1290,3 +1290,13 @@ export default axios;
 ### 181. Sending a POST Request
 
 https://kutt.it/JilnIL
+
+### 182. Displaying a Spinner while Sending a Request
+
+https://kutt.it/2hVOUh
+
+* The css for a spinner can be gotten here
+  https://projects.lukehaas.me/css-loaders/
+
+
+

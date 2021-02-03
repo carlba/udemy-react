@@ -4,6 +4,7 @@ import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/ui/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
+import Spinner from '../..//components/ui/Spinner/Spinner';
 import axiosOrders from '../../axios-orders';
 
 const INGREDIENT_PRICES = {
@@ -23,7 +24,8 @@ class BurgerBuilder extends Component {
     },
     totalPrice: 4,
     isReadyToOrder: false,
-    isOrdering: false
+    isOrdering: false,
+    loading: false
   };
 
   updateIsReadyToOrder(ingredients) {
@@ -64,6 +66,7 @@ class BurgerBuilder extends Component {
   };
 
   handleOrderContinue = async () => {
+    this.setState({ loading: true });
     const order = {
       ingredients: this.state.ingredients,
       price: this.state.totalPrice,
@@ -79,6 +82,8 @@ class BurgerBuilder extends Component {
       console.log('Response from handle order', response);
     } catch (err) {
       console.log('Error while posting order', err);
+    } finally {
+      this.setState({ loading: false, isOrdering: false });
     }
   };
 
@@ -86,6 +91,17 @@ class BurgerBuilder extends Component {
     const disabledInfo = Object.entries(this.state.ingredients).reduce((acc, [key, value]) => {
       return { ...acc, [key]: value <= 0 };
     }, {});
+    let orderSummary = (
+      <OrderSummary
+        ingredients={this.state.ingredients}
+        totalPrice={this.state.totalPrice}
+        onOrderCancel={this.handleOrderCancel}
+        onOrderContinue={this.handleOrderContinue}
+      ></OrderSummary>
+    );
+    if (this.state.loading) {
+      orderSummary = <Spinner />;
+    }
     return (
       <React.Fragment>
         <Modal
@@ -93,12 +109,7 @@ class BurgerBuilder extends Component {
           disabled={this.state.isOrdering}
           onModalClose={this.handleOrderCancel}
         >
-          <OrderSummary
-            ingredients={this.state.ingredients}
-            totalPrice={this.state.totalPrice}
-            onOrderCancel={this.handleOrderCancel}
-            onOrderContinue={this.handleOrderContinue}
-          ></OrderSummary>
+          {orderSummary}
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
