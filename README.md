@@ -1052,3 +1052,7 @@ https://kutt.it/nFSSSr
 ### 152. Improving the App - Introduction
 
 https://kutt.it/FWehgR
+
+#### 153. Prop Type Validation
+
+https://kutt.it/tHnqnM

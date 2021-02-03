@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
@@ -22,6 +23,15 @@ const Burger = props => {
       <BurgerIngredient type="bread-bottom" />
     </div>
   );
+};
+
+Burger.propTypes = {
+  ingredients: PropTypes.exact({
+    salad: PropTypes.number,
+    bacon: PropTypes.number,
+    cheese: PropTypes.number,
+    meat: PropTypes.number
+  })
 };
 
 export default Burger;
