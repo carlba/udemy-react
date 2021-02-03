@@ -1126,6 +1126,17 @@ https://kutt.it/ATO3bL
   }
   ```
 
+* Sending data to servers is simple:
+
+  ```jsx
+  const post = {
+    title: this.state.title,
+    body: this.state.content,
+    author: this.state.author
+  };
+  const response = await axios.post('https://jsonplaceholder.typicode.com/posts', post);
+  ```
+
   
 
 ### 164. Transforming Data
@@ -1141,3 +1152,6 @@ https://kutt.it/C9FAqj
 
 https://kutt.it/HllG0z
 
+### 167. POSTing Data to the Server
+
+https://kutt.it/I4TJaT
