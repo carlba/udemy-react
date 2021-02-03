@@ -1113,3 +1113,6 @@ https://kutt.it/ATO3bL
 
 * External data such as `JSON` data from a server should be gotten in the `componentDidMount()` If we only want to get the data once.
 
+### 164. Transforming Data
+
+https://kutt.it/Iem1Vy

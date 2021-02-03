@@ -7,13 +7,14 @@ const Post = props => (
   <article className="Post">
     <h1>{props.title}</h1>
     <div className="Info">
-      <div className="Author">Author</div>
+      <div className="Author">{props.author}</div>
     </div>
   </article>
 );
 
 Post.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  author: PropTypes.string
 };
 
 export default Post;
