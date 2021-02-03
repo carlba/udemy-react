@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
+import axiosInstance from '../../axios';
 
 class Blog extends Component {
   state = {
@@ -13,7 +13,7 @@ class Blog extends Component {
     error: false
   };
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/posts')
       .then(response => {
         const posts = response.data.slice(0, 4);

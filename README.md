@@ -1244,4 +1244,20 @@ https://kutt.it/8I0Kdq
   axios.defaults.headers.post['Content-Type'] = 'application/json'; //This is the default anyway
   ```
 
-  
+### 174. Creating and Using Axios Instances
+
+https://kutt.it/PGpFy4
+
+Axios instances are "copies" of Axios that can be configured in different ways. They will still adhere to the global configuration but can extend it, like so:
+
+```jsx
+import axios from 'axios';
+
+const instance = axios.create({ baseURL: 'https://jsonplaceholder.typicode.com' });
+
+instance.defaults.headers.common['Authorization'] = 'AUTH TOKEN FROM INSTANCE';
+
+export default instance;
+
+```
+
