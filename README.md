@@ -1073,3 +1073,9 @@ state of the modal has changed. This could also be done by `React.memo()`. But t
 
 https://kutt.it/nQIgAU
 
+### 156. Changing the Folder Structure
+
+https://kutt.it/Nopa0L
+
+* Did some minor updates to the folder structure.
+
