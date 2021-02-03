@@ -1106,3 +1106,10 @@ https://kutt.it/VLvnKz
 * [Axios](https://github.com/axios/axios) is the preferred library for making  [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser.
 
 <iframe height=500 src="https://js-render-markdown.stackblitz.io/?url=https://raw.githubusercontent.com/axios/axios/master/README.md"></iframe>
+
+### 162. Creating a Http Request to GET Data
+
+https://kutt.it/ATO3bL
+
+* External data such as `JSON` data from a server should be gotten in the `componentDidMount()` If we only want to get the data once.
+

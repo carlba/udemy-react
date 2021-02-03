@@ -128,6 +128,14 @@ export default Component;
   </React.Fragment>
   ```
 
+### Populate Components with Data
+
+* External data such as `JSON` data from a server should be gotten in the `componentDidMount()` If we only want to get the data once.
+
+
+
+
+
 ## Debugging
 
 * Using Chromium as the default browser for the `npm start` command is simple. Just add   `BROWSER=chromium` before the start script in `package.json`, like so:
