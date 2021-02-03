@@ -4,7 +4,9 @@ import styles from './DrawerToggle.module.css';
 
 const DrawerToggle = props => (
   <div className={styles.DrawerToggle} onClick={props.onClick}>
-    MENU
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 );
 

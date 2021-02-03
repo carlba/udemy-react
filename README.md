@@ -1044,3 +1044,7 @@ https://kutt.it/nvW9Rf
   ```
 
   Using `this.state` directly can cause bugs since it does not necessarily contain the newest state. 
+
+### 151. Adding a Hamburger Icon
+
+https://kutt.it/nFSSSr
