@@ -1177,3 +1177,58 @@ https://kutt.it/ZhUVZU
 
 * A nice way to handle errors is to set a property `error` in the state to `true` and then show a div or indicating that an error happened.
 
+### 171. Adding Interceptors to Execute Code Globally
+
+https://kutt.it/LD4AxP
+
+* Errors should be handled locally in components because you want to do different things with the depending on the context.
+* Sometimes it might make sense to do something globally. Axios does this with interceptors.
+
+#### Request Interceptor
+
+An axios request interceptor will get executed on all http requests executed by axios no matter where in the application. It looks something like this:
+
+```jsx
+axios.interceptors.request.use(
+  request => {
+    console.log(request);
+    return request;
+  },
+  error => {
+    console.log('error', error);
+    return Promise.reject(error);
+  }
+);
+```
+
+The problem with this is that now the reply is not passed on to the receiver. For an interceptor to work they need to return the request back. The request can of course also be modified.
+
+The interceptor takes a second argument which is the errors but not as you might think HTTP errors returned from the server. This error handler only handles network errors and similar that happens before the request is made.
+
+#### Response Interceptor
+
+```jsx
+axios.interceptors.response.use(
+  response => {
+    console.log('response', response);
+    return response;
+  },
+  error => {
+    console.log('error', error);
+    return Promise.reject(error);
+  }
+);
+
+```
+
+The error handler in the response interceptor would actually be able to intercept HTTP errors returned from a server.
+
+#### Removing Interceptors
+
+You learned how to add an interceptor, getting rid of one is also easy. Simply store the reference to the interceptor in a variable and call `eject` with that reference as an argument, to remove it (more info: https://github.com/axios/axios#interceptors):
+
+```jsx
+var myInterceptor = axios.interceptors.request.use(function () {/*...*/});
+axios.interceptors.request.eject(myInterceptor);
+```
+
