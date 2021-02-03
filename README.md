@@ -1113,6 +1113,21 @@ https://kutt.it/ATO3bL
 
 * External data such as `JSON` data from a server should be gotten in the `componentDidMount()` If we only want to get the data once.
 
+* If it should be loaded into existing components then `componenDidUpdate()` is the way to go.
+
+* Since the result of the http request is used to update the state it will also trigger a new run of the method. We need to implement a check to ensure whether it should be run again.
+
+  ```jsx
+  if (!this.state.post || (this.state.post && this.state.post.id !== this.props.id)) {
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts/${this.props.id}`
+    );
+    this.setState({ post: response.data });
+  }
+  ```
+
+  
+
 ### 164. Transforming Data
 
 https://kutt.it/Iem1Vy
@@ -1121,4 +1136,8 @@ https://kutt.it/Iem1Vy
 ### 165. Making a Post Selectable
 
 https://kutt.it/C9FAqj
+
+### 166. Fetching Data on Update (without Creating Infinite Loops)
+
+https://kutt.it/HllG0z
 
