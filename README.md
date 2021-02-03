@@ -1022,3 +1022,7 @@ https://kutt.it/z3k3Zk
 ### 147. Working on Responsive Adjustments
 
 https://kutt.it/ke8Jay
+
+### 148. More about Responsive Adjustments
+
+https://kutt.it/8kt4Ey
