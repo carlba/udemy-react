@@ -1048,3 +1048,7 @@ https://kutt.it/nvW9Rf
 ### 151. Adding a Hamburger Icon
 
 https://kutt.it/nFSSSr
+
+### 152. Improving the App - Introduction
+
+https://kutt.it/FWehgR
