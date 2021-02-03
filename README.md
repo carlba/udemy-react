@@ -1267,3 +1267,9 @@ export default instance;
 
 https://kutt.it/1wYIi8
 
+### 179. Creating the Firebase Project
+
+https://kutt.it/x8IHmN
+
+https://udemy-react-burger-build-default-rtdb.firebaseio.com/
+
