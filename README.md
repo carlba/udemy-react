@@ -1232,3 +1232,16 @@ var myInterceptor = axios.interceptors.request.use(function () {/*...*/});
 axios.interceptors.request.eject(myInterceptor);
 ```
 
+### 173. Setting a Default Global Configuration for Axios
+
+https://kutt.it/8I0Kdq
+
+* A baseurl that will be prepended on all requests made to the server can be added, like so:
+
+  ```jsx
+  axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
+  axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
+  axios.defaults.headers.post['Content-Type'] = 'application/json'; //This is the default anyway
+  ```
+
+  
