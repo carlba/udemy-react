@@ -7,21 +7,25 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
   state = {
-    isSideDrawerVisible: true
+    isSideDrawerVisible: false
+  };
+
+  handleSideDrawerOpen = () => {
+    this.setState({ isSideDrawerVisible: true });
   };
 
   handleSideDrawerClose = () => {
     this.setState({ isSideDrawerVisible: false });
   };
 
-  handleSideDrawerOpen = () => {
-    this.setState({ isSideDrawerVisible: false });
+  handleMenuButtonClick = () => {
+    this.setState(prevState => ({ isSideDrawerVisible: !prevState.isSideDrawerVisible }));
   };
 
   render() {
     return (
       <React.Fragment>
-        <Toolbar />
+        <Toolbar onMenuButtonClick={this.handleMenuButtonClick} />
         <SideDrawer
           show={this.state.isSideDrawerVisible}
           onOpen={this.handleSideDrawerOpen}

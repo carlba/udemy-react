@@ -1030,3 +1030,17 @@ https://kutt.it/8kt4Ey
 ### 149. Reusing the Backdrop
 
 https://kutt.it/IGxSZv
+
+### 150. Adding a Sidedrawer Toggle Button
+
+https://kutt.it/nvW9Rf
+
+* Always make sure to use the previous state correctly when using `this.setState` in a Class Based component.
+
+  ```jsx
+  handleMenuButtonClick = () => {
+    this.setState(prevState => ({ isSideDrawerVisible: !prevState.isSideDrawerVisible }));
+  };
+  ```
+
+  Using `this.state` directly can cause bugs since it does not necessarily contain the newest state. 
