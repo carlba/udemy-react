@@ -1456,3 +1456,26 @@ It is possible to navigate using the router, like so:
 **### 225. Passing Ingredients via Query Params**
 
 https://kutt.it/rqUOXv
+
+### 226. Navigating to the Contact Data Component
+
+https://kutt.it/ciZspc
+
+* It is possible to add nested router outlets within other components, like so:
+
+  ```jsx
+  render() {
+    return (
+      <div>
+        <CheckoutSummary
+          onCancel={this.handleCheckoutCancel}
+          onContinue={this.handleCheckoutContinue}
+          ingredients={this.state.ingredients}
+          />
+        <Route path={`${this.props.match.path}/contact-data`} component={ContactData} />
+      </div>
+    );
+  }
+  ```
+
+  

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
 import styles from './Checkout.module.css';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
+import ContactData from '../ContactData/ContactData';
 
 class Checkout extends Component {
   state = {
@@ -25,8 +27,6 @@ class Checkout extends Component {
     const ingredients = Object.fromEntries(
       Array.from(query.entries()).map(([key, val]) => [key, +val || 0])
     );
-    console.log(ingredients);
-
     this.setState({ ingredients });
   }
 
@@ -46,6 +46,7 @@ class Checkout extends Component {
           onContinue={this.handleCheckoutContinue}
           ingredients={this.state.ingredients}
         />
+        <Route path={`${this.props.match.path}/contact-data`} component={ContactData} />
       </div>
     );
   }
