@@ -1354,3 +1354,17 @@ https://kutt.it/06K0ZL
   ```
 
 * When loading data from the backend it is important to take into account initial null values.
+
+### 185. Removing Old Interceptors
+
+https://kutt.it/F9QSPL
+
+* It is important to remove the interceptor to prevent them from being being added each time the withError handler is called.
+
+```jsx
+componentWillUnmount() {
+  axios.interceptors.request.eject(this.requestInterceptor);
+  axios.interceptors.response.eject(this.responseInterceptor);
+}
+```
+

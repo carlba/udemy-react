@@ -5,17 +5,18 @@ import Modal from '../../components/ui/Modal/Modal';
 const withErrorHandler = (WrappedComponent, axios) => {
   return class extends Component {
     state = { initialized: false, error: null };
+
     /**
      * We are using this `this.state.initialized` to handle the fact that these
      * interceptors will not get attached until the wrapped component has mounted.
      * see these questions for more info. https://kutt.it/56IflR.
      */
     componentDidMount() {
-      axios.interceptors.request.use(req => {
+      this.requestInterceptor = axios.interceptors.request.use(req => {
         this.setState({ error: null });
         return req;
       });
-      axios.interceptors.response.use(null, error => {
+      this.responseInterceptor = axios.interceptors.response.use(null, error => {
         this.setState({ error });
       });
       this.setState({ initialized: true });
@@ -24,6 +25,11 @@ const withErrorHandler = (WrappedComponent, axios) => {
     handleModalClose = () => {
       this.setState({ error: null });
     };
+
+    componentWillUnmount() {
+      axios.interceptors.request.eject(this.requestInterceptor);
+      axios.interceptors.response.eject(this.responseInterceptor);
+    }
 
     render() {
       const { initialized } = this.state;
