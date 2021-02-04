@@ -17,17 +17,23 @@ const INGREDIENT_PRICES = {
 
 class BurgerBuilder extends Component {
   state = {
-    ingredients: {
-      salad: 0,
-      bacon: 0,
-      cheese: 0,
-      meat: 0
-    },
+    ingredients: null,
     totalPrice: 4,
     isReadyToOrder: false,
     isOrdering: false,
     loading: false
   };
+
+  async componentDidMount() {
+    try {
+      const response = await axiosOrders.get(
+        'https://udemy-react-burger-build-default-rtdb.firebaseio.com/ingredients.json'
+      );
+      this.setState({ ingredients: response.data });
+    } catch (err) {
+      console.log('Error on getting ingredients');
+    }
+  }
 
   updateIsReadyToOrder(ingredients) {
     this.setState({
@@ -89,20 +95,39 @@ class BurgerBuilder extends Component {
   };
 
   render() {
-    const disabledInfo = Object.entries(this.state.ingredients).reduce((acc, [key, value]) => {
-      return { ...acc, [key]: value <= 0 };
-    }, {});
-    let orderSummary = (
-      <OrderSummary
-        ingredients={this.state.ingredients}
-        totalPrice={this.state.totalPrice}
-        onOrderCancel={this.handleOrderCancel}
-        onOrderContinue={this.handleOrderContinue}
-      ></OrderSummary>
-    );
+    let orderSummary = null;
+    let burger = <Spinner />;
+    if (this.state.ingredients) {
+      const disabledInfo = Object.entries(this.state.ingredients).reduce((acc, [key, value]) => {
+        return { ...acc, [key]: value <= 0 };
+      }, {});
+      burger = (
+        <React.Fragment>
+          <Burger ingredients={this.state.ingredients} />
+          <BuildControls
+            onIngredientAdd={this.handleAddIngredient}
+            onIngredientRemove={this.handleRemoveIngredient}
+            disabledInfo={disabledInfo}
+            isReadyToOrder={this.state.isReadyToOrder}
+            isOrdering={this.state.isOrdering}
+            onOrdered={this.handleOrder}
+            price={this.state.totalPrice}
+          ></BuildControls>
+        </React.Fragment>
+      );
+      orderSummary = (
+        <OrderSummary
+          ingredients={this.state.ingredients}
+          totalPrice={this.state.totalPrice}
+          onOrderCancel={this.handleOrderCancel}
+          onOrderContinue={this.handleOrderContinue}
+        ></OrderSummary>
+      );
+    }
     if (this.state.loading) {
       orderSummary = <Spinner />;
     }
+
     return (
       <React.Fragment>
         <Modal
@@ -112,16 +137,7 @@ class BurgerBuilder extends Component {
         >
           {orderSummary}
         </Modal>
-        <Burger ingredients={this.state.ingredients} />
-        <BuildControls
-          onIngredientAdd={this.handleAddIngredient}
-          onIngredientRemove={this.handleRemoveIngredient}
-          disabledInfo={disabledInfo}
-          isReadyToOrder={this.state.isReadyToOrder}
-          isOrdering={this.state.isOrdering}
-          onOrdered={this.handleOrder}
-          price={this.state.totalPrice}
-        ></BuildControls>
+        {burger}
       </React.Fragment>
     );
   }

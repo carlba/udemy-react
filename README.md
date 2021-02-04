@@ -1334,3 +1334,23 @@ It can be used in a component, like so:
 export default withErrorHandler(BurgerBuilder);
 ```
 
+### 184. Retrieving Data from the Backend
+
+https://kutt.it/06K0ZL
+
+* This should be done in `componentDidMount()`
+
+  ```jsx
+  async componentDidMount() {
+    try {
+      const response = await axiosOrders.get(
+        'https://udemy-react-burger-build-default-rtdb.firebaseio.com/ingredients.json'
+      );
+      this.setState({ ingredients: response.data });
+    } catch (err) {
+      console.log('Error on getting ingredients');
+    }
+  }
+  ```
+
+* When loading data from the backend it is important to take into account initial null values.
