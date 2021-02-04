@@ -1368,3 +1368,10 @@ componentWillUnmount() {
 }
 ```
 
+## Section 12: Adding Routing to our Burger Project
+
+### 221. Building the Checkout Container
+
+https://kutt.it/3FIdqy
+
+* This section sets upp the boilerplate for the routing in the next module.
