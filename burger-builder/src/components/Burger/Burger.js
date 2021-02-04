@@ -6,11 +6,13 @@ import styles from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = props => {
-  console.log('props including router stuff');
+  console.log('props including router stuff', props);
   let multiIngredientArray = Object.entries(props.ingredients).reduce((acc, [key, amount]) => {
-    const ingredientElements = [...Array(amount)].map((_, index) => (
-      <BurgerIngredient key={`${key}-${index}`} type={key} />
-    ));
+    const ingredientElements = amount
+      ? [...Array(amount)].map((_, index) => (
+          <BurgerIngredient key={`${key}-${index}`} type={key} />
+        ))
+      : [];
     return [...acc, ...ingredientElements];
   }, []);
 
@@ -29,10 +31,10 @@ const Burger = props => {
 
 Burger.propTypes = {
   ingredients: PropTypes.exact({
-    salad: PropTypes.number,
-    bacon: PropTypes.number,
-    cheese: PropTypes.number,
-    meat: PropTypes.number
+    salad: PropTypes.number.isRequired,
+    bacon: PropTypes.number.isRequired,
+    cheese: PropTypes.number.isRequired,
+    meat: PropTypes.number.isRequired
   })
 };
 

@@ -1452,3 +1452,7 @@ It is possible to navigate using the router, like so:
     this.props.history.replace('/checkout/contact-data');
   };
 ```
+
+**### 225. Passing Ingredients via Query Params**
+
+https://kutt.it/rqUOXv
