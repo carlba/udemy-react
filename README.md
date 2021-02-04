@@ -1435,4 +1435,20 @@ https://kutt.it/nLttvb
   };
   ```
 
-  
+
+
+### 224. Navigating Back & To Next Page
+
+https://kutt.it/MidqKa
+
+It is possible to navigate using the router, like so:
+
+```jsx
+  handleCheckoutCancel = () => {
+    this.props.history.goBack();
+  };
+
+  handleCheckoutContinue = () => {
+    this.props.history.replace('/checkout/contact-data');
+  };
+```

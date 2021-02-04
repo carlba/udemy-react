@@ -10,10 +10,10 @@ const CheckoutSummary = props => (
     <div style={{ width: '100%', margin: 'auto' }}>
       <Burger ingredients={props.ingredients} />
     </div>
-    <Button buttonType="Danger" clicked>
+    <Button buttonType="Danger" onClick={props.onCancel}>
       Cancel
     </Button>
-    <Button buttonType="Success" clicked>
+    <Button buttonType="Success" onClick={props.onContinue}>
       Continue
     </Button>
   </div>
@@ -22,7 +22,9 @@ const CheckoutSummary = props => (
 CheckoutSummary.propTypes = {};
 
 CheckoutSummary.defaultProps = {
-  ingredients: PropTypes.object
+  ingredients: PropTypes.object,
+  onCancel: PropTypes.func,
+  onContinue: PropTypes.func
 };
 
 export default CheckoutSummary;
