@@ -1375,3 +1375,54 @@ componentWillUnmount() {
 https://kutt.it/3FIdqy
 
 * This section sets upp the boilerplate for the routing in the next module.
+
+
+
+### 222. Setting Up Routing & Routes
+
+https://kutt.it/3hzMcY
+
+* `npm install --save react-route react-router-dom`
+
+* Configure routing
+
+  ```jsx
+  import { BrowserRouter } from 'react-router-dom';
+  
+  const app = (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+  
+  ReactDOM.render(app, document.getElementById('root'));
+  ```
+
+* Register routes
+
+  ```jsx
+  class App extends Component {
+    render() {
+      return (
+        <div>
+          <Layout>
+            <Switch>
+              <Route path="/checkout" component={Checkout}></Route>
+              <Route path="/" exact component={BurgerBuilder}></Route>
+            </Switch>
+            <BurgerBuilder />
+            <Checkout />
+          </Layout>
+        </div>
+      );
+    }
+  }
+  ```
+
+  * `<Switch></Switch>` Shows only the route that is matched first.
+  * `exact` only matches an exact route
+
+### 223. Navigating to the Checkout Page
+
+https://kutt.it/nLttvb
+
