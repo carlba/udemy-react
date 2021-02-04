@@ -1487,3 +1487,17 @@ https://kutt.it/KSqBh4
 ### 228. Adding an Orders Page
 
 https://kutt.it/NMlVLU
+
+### 229. Implementing Navigation Links
+
+https://kutt.it/3OG97O
+
+```jsx
+<NavLink to={props.link} activeClassName={styles.active} exact={props.exact}>
+  {props.children}
+</NavLink>
+```
+
+* `to` is which route the React router will navigate to on click. A class active will also be added to the element when a route matching the link is active.
+* `exact` makes the link only match the exact path instead of all paths containing the route
+
