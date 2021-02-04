@@ -1426,3 +1426,13 @@ https://kutt.it/3hzMcY
 
 https://kutt.it/nLttvb
 
+* Only the direct children of the router has access to the router specific props. To get access to them in other nested components use:
+
+  ```jsx
+  import { withRouter } from 'react-router-dom';
+  const Burger = props => {
+    console.log('props including router stuff', props.match, props.location, props.history);
+  };
+  ```
+
+  

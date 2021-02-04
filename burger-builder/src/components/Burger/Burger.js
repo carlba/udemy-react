@@ -1,10 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import styles from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = props => {
+  console.log('props including router stuff');
   let multiIngredientArray = Object.entries(props.ingredients).reduce((acc, [key, amount]) => {
     const ingredientElements = [...Array(amount)].map((_, index) => (
       <BurgerIngredient key={`${key}-${index}`} type={key} />
@@ -34,4 +36,4 @@ Burger.propTypes = {
   })
 };
 
-export default Burger;
+export default withRouter(Burger);
