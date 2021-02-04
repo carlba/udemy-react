@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import Backdrop from './Backdrop/Backdrop';
+import Backdrop from '../Backdrop/Backdrop';
 
 import styles from './Modal.module.css';
 
@@ -30,5 +31,10 @@ class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  show: PropTypes.bool,
+  onModalClose: PropTypes.func
+};
 
 export default Modal;

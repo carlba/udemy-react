@@ -1300,3 +1300,37 @@ https://kutt.it/2hVOUh
 
 
 
+### 183. Handling Errors
+
+https://kutt.it/r5YkFd
+
+This is an example of an error handler HOC:
+
+```jsx
+// burger-builder/src/hoc/withErrorHandler/withErrorHandler.js
+
+import React from 'react';
+
+import Modal from '../../components/ui/Modal/Modal';
+
+const withErrorHandler = WrappedComponent => {
+  return props => {
+    return (
+      <React.Fragment>
+        <Modal>Something didn't work</Modal>
+        <WrappedComponent {...props}></WrappedComponent>;
+      </React.Fragment>
+    );
+  };
+};
+
+export default withErrorHandler;
+
+```
+
+It can be used in a component, like so:
+
+```jsx
+export default withErrorHandler(BurgerBuilder);
+```
+
