@@ -6,7 +6,6 @@ import styles from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = props => {
-  console.log('props including router stuff', props);
   let multiIngredientArray = Object.entries(props.ingredients).reduce((acc, [key, amount]) => {
     const ingredientElements = amount
       ? [...Array(amount)].map((_, index) => (

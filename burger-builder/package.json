@@ -33,8 +33,7 @@
         {
           "eventHandlerPrefix": "handle",
           "eventHandlerPropPrefix": "on",
-          "checkLocalVariables": true,
-          "checkInlineFunction": true
+          "checkLocalVariables": true
         }
       ]
     }
