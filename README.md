@@ -2038,3 +2038,7 @@ https://kutt.it/roSaIg
 ### 275. Basic Redux Setup
 
 https://kutt.it/rRGZ93
+
+### 276. Finishing the Reducer for Ingredients
+
+https://kutt.it/AZbOGZ

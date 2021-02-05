@@ -25,14 +25,14 @@ class BurgerBuilder extends Component {
   };
 
   async componentDidMount() {
-    try {
-      const response = await axiosOrders.get(
-        'https://udemy-react-burger-build-default-rtdb.firebaseio.com/ingredients.json'
-      );
-      this.setState({ ingredients: response.data });
-    } catch (err) {
-      console.log('Error on getting ingredients');
-    }
+    // try {
+    //   const response = await axiosOrders.get(
+    //     'https://udemy-react-burger-build-default-rtdb.firebaseio.com/ingredients.json'
+    //   );
+    //   this.setState({ ingredients: response.data });
+    // } catch (err) {
+    //   console.log('Error on getting ingredients');
+    // }
   }
 
   updateIsReadyToOrder(ingredients) {
