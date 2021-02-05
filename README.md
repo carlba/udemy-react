@@ -1701,3 +1701,46 @@ console.log(store.getState());
 ### 256. Dispatching Actions
 
 https://kutt.it/jm3qBR
+
+### 257. Adding Subscriptions
+
+https://kutt.it/E9Bipl
+
+* Subscription triggers when something is changing in the store.
+* The subscription allows registering a callback function that will fire whenever anything in the store changes.
+
+```jsx
+const redux = require('redux');
+const createStore = redux.createStore;
+
+const initialState = {
+  counter: 0
+};
+
+// Reducer
+const rootReducer = (state = initialState, action) => {
+  if (action.type === 'INC_COUNTER') {
+    return { ...state, counter: state.counter + 1 };
+  }
+  if (action.type === 'ADD_COUNTER') {
+    return { ...state, counter: state.counter + action.value };
+  }
+  return state;
+};
+
+// Store
+const store = createStore(rootReducer);
+console.log(store.getState());
+
+// Subscription
+
+store.subscribe(() => console.log('[Subscription]', store.getState()));
+
+// Dispatching Action
+
+store.dispatch({ type: 'INC_COUNTER' });
+store.dispatch({ type: 'ADD_COUNTER', value: 10 });
+console.log(store.getState());
+
+```
+
