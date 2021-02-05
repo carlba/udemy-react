@@ -1797,3 +1797,33 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 
 
+### 261. Passing and Retrieving Data with Action
+
+https://kutt.it/asZXdG
+
+```jsx
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'ADD':
+      return { counter: state.counter + action.value };
+    case 'SUBTRACT':
+      return { counter: state.counter - action.value };
+    default:
+      return state;
+  }
+};
+```
+
+
+
+```jsx
+const mapDispatchToProps = dispatch => ({
+  onAddCounter: () => {
+    return dispatch({ type: 'ADD', value: 5 });
+  },
+  onSubtractCounter: () => {
+    return dispatch({ type: 'SUBTRACT', value: 5 });
+  }
+});
+```
+
