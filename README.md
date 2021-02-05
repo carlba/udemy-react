@@ -1588,5 +1588,7 @@ export default Input;
 
 ```
 
+### 237. Setting Up a JS Config for the Form
 
+https://kutt.it/Tmnsxz
 

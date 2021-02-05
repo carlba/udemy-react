@@ -9,20 +9,68 @@ import axiosOrders from '../../axios-orders';
 import Input from '../../components/ui/Input/Input';
 
 class ContactData extends Component {
-  state = { name: '', email: '', address: { street: '', postalCode: '' }, loading: false };
+  state = {
+    orderForm: {
+      name: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'Your Name'
+        },
+        value: ''
+      },
+      street: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'Your Street'
+        },
+        value: ''
+      },
+      country: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'Your Country'
+        },
+        value: ''
+      },
+      zipCode: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'text',
+          placeholder: 'Your Zip Code'
+        },
+        value: ''
+      },
+      email: {
+        elementType: 'input',
+        elementConfig: {
+          type: 'email',
+          placeholder: 'Your Email'
+        },
+        value: ''
+      },
+      deliveryMethod: {
+        elementType: 'select',
+        elementConfig: {
+          options: [
+            { value: 'fastest', displayValue: 'Fastest' },
+            { value: 'cheapest', displayValue: 'Cheapest' }
+          ]
+        },
+        value: ''
+      }
+    },
+    loading: false
+  };
 
   handleOrder = async event => {
     event.preventDefault();
     this.setState({ loading: true });
     const order = {
       ingredients: this.props.ingredients,
-      price: this.props.totalPrice,
-      customer: {
-        name: 'Carl Backstrom',
-        address: { street: 'Test Street', country: 'Sweden', zipCode: '11862' },
-        email: 'test@test.com'
-      },
-      deliveryMethod: 'fastest'
+      price: this.props.totalPrice
     };
 
     try {
@@ -36,12 +84,20 @@ class ContactData extends Component {
   };
 
   render() {
+    const formElementsArray = Object.entries(this.state.orderForm).reduce((acc, [id, config]) => {
+      return [...acc, { ...config, id }];
+    }, []);
+
     let form = (
       <form>
-        <Input inputType="input" type="text" name="name" placeholder="Your name" />
-        <Input inputType="input" type="email" name="email" placeholder="Your email" />
-        <Input inputType="input" type="text" name="street" placeholder="Your street" />
-        <Input inputType="input" type="text" name="postal" placeholder="Your postal code" />
+        {formElementsArray.map(formElement => (
+          <Input
+            key={formElement.id}
+            elementType={formElement.elementType}
+            elementConfig={formElement.elementConfig}
+            value={formElement.value}
+          ></Input>
+        ))}
       </form>
     );
     if (this.state.loading) {

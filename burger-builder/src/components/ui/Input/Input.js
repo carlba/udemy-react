@@ -4,16 +4,20 @@ import styles from './Input.module.css';
 
 const Input = props => {
   let inputElement = null;
-  const { inputType, ...htmlProps } = props;
-  switch (inputType) {
+
+  switch (props.elementType) {
     case 'input':
-      inputElement = <input className={styles.InputElement} {...htmlProps} />;
+      inputElement = (
+        <input className={styles.InputElement} {...props.elementConfig} value={props.value} />
+      );
       break;
     case 'textarea':
-      inputElement = <textarea className={styles.InputElement} {...htmlProps} />;
+      inputElement = (
+        <textarea className={styles.InputElement} {...props.elementConfig} value={props.value} />
+      );
       break;
     default:
-      inputElement = <input className={styles.inputElement} />;
+      inputElement = <input className={styles.inputElement} value={props.value} />;
   }
 
   return (
@@ -24,7 +28,11 @@ const Input = props => {
   );
 };
 
-Input.propTypes = { inputType: PropTypes.string };
+Input.propTypes = {
+  elementType: PropTypes.string,
+  elementConfig: PropTypes.exact({ type: PropTypes.string, placeholder: PropTypes.string }),
+  value: PropTypes.string
+};
 
 Input.defaultProps = {};
 
