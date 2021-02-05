@@ -58,7 +58,13 @@ const Input = props => {
 
 Input.propTypes = {
   elementType: PropTypes.string,
-  elementConfig: PropTypes.exact({ type: PropTypes.string, placeholder: PropTypes.string }),
+  elementConfig: PropTypes.exact({
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    options: PropTypes.arrayOf(
+      PropTypes.exact({ value: PropTypes.string, displayValue: PropTypes.string })
+    )
+  }),
   value: PropTypes.string,
   onInputChange: PropTypes.func
 };

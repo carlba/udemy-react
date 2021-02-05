@@ -68,9 +68,17 @@ class ContactData extends Component {
   handleOrder = async event => {
     event.preventDefault();
     this.setState({ loading: true });
+    const orderFormData = Object.entries(this.state.orderForm).reduce((acc, [id, { value }]) => {
+      return {
+        ...acc,
+        [id]: value
+      };
+    }, {});
+
     const order = {
       ingredients: this.props.ingredients,
-      price: this.props.totalPrice
+      price: this.props.totalPrice,
+      orderData: orderFormData
     };
 
     try {
@@ -98,7 +106,7 @@ class ContactData extends Component {
     }, []);
 
     let form = (
-      <form>
+      <form onSubmit={this.handleOrder}>
         {formElementsArray.map(formElement => (
           <Input
             key={formElement.id}
