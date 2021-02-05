@@ -1744,3 +1744,33 @@ console.log(store.getState());
 
 ```
 
+
+
+## 258-259 Stores in React
+
+https://kutt.it/X2OsH5
+
+```jsx
+const store = createStore(reducer);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+```
+
+```jsx
+import { connect } from 'react-redux';
+/**
+ * Maps things in the redux state to a prop in the component.
+ * @param {object} state
+ */
+const mapStateToProps = state => ({ ctr: state.counter });
+
+export default connect(mapStateToProps)(Counter);
+
+```
+
+* The connect method returns a HOC function that can wrap a Component. It takes two argument of which the first is a function that maps a part of the state to a prop in the component.
