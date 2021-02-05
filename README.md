@@ -1501,3 +1501,11 @@ https://kutt.it/3OG97O
 * `to` is which route the React router will navigate to on click. A class active will also be added to the element when a route matching the link is active.
 * `exact` makes the link only match the exact path instead of all paths containing the route
 
+### 230. Fetching Orders
+
+https://kutt.it/0bVKIg
+
+
+### 231. Outputting the Orders
+
+https://kutt.it/6c1prx
