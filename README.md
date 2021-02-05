@@ -2009,5 +2009,6 @@ export const DELETE_RESULT = 'DELETE_RESULT';
   import * as actions from '../../store/actions';
   ```
 
-  
+### 267. Combining Multiple Reducers
 
+https://kutt.it/7bjhvt
