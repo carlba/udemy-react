@@ -1657,6 +1657,12 @@ const formIsValid = Object.values(orderForm).every(value =>
 
 ## Section 14: Redux
 
+- Redux Docs: https://redux.js.org/
+- Core Concepts: https://redux.js.org/introduction/core-concepts
+- Actions: https://redux.js.org/basics/actions
+- Reducers: https://redux.js.org/basics/reducers
+- Redux FAQs: https://redux.js.org/faq
+
 ### 253. The Complexity of Managing State
 
 https://kutt.it/pL9L1k
@@ -1746,7 +1752,7 @@ console.log(store.getState());
 
 
 
-## 258-259 Stores in React
+### 258-259 Stores in React
 
 https://kutt.it/X2OsH5
 
