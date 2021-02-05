@@ -1677,3 +1677,23 @@ https://kutt.it/baTY20
 ### 255. Setting Up Reducer and Store
 
 https://kutt.it/uuK6JN
+
+```jsx
+const redux = require('redux');
+const createStore = redux.createStore;
+
+const initialState = {
+  counter: 0
+};
+
+// Reducer
+const rootReducer = (state = initialState, action) => state;
+
+// Store
+const store = createStore(rootReducer);
+console.log(store.getState());
+```
+
+* Most simple use case of redux
+* We create a store with an initial state and add a root reducer that does nothing.
+* It is then possible to retrieve the state from the store using `store.getState()`
