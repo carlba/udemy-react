@@ -2024,3 +2024,16 @@ https://kutt.it/7bjhvt
 https://kutt.it/QtzK6W
 
 ![image-20210205203139679](https://cdn.jsdelivr.net/gh/carlba/assets@master/EG0yLJ-image-20210205203139679.png)
+
+## Section 15: Adding Redux to our Project
+
+## 273. Module Introduction
+
+https://kutt.it/kbdghq
+
+
+
+### 274. Installing Redux and React Redux
+
+https://kutt.it/roSaIg
+
