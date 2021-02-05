@@ -25,7 +25,7 @@ class ContactData extends Component {
     };
 
     try {
-      const response = await axiosOrders.post('/orders.json', order);
+      await axiosOrders.post('/orders.json', order);
       this.setState({ loading: false });
       this.props.history.push('/');
     } catch (err) {

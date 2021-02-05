@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import axios from '../../axios-orders';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
@@ -35,9 +34,5 @@ class Orders extends Component {
     return <div className={styles.Orders}>{orders}</div>;
   }
 }
-
-Orders.propTypes = {};
-
-Orders.defaultProps = {};
 
 export default withErrorHandler(Orders, axios);

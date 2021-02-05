@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
-import styles from './Checkout.module.css';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from '../ContactData/ContactData';
 
@@ -19,12 +17,6 @@ class Checkout extends Component {
 
   componentDidMount() {
     const query = new URLSearchParams(this.props.location.search);
-    // console.log(Array.from(query.entries()));
-
-    // const ingredients = Array.from(query.entries()).reduce((acc, [key, value]) => {
-    //   return { ...acc, [key]: +value };
-    // }, {});
-
     const params = Object.fromEntries(
       Array.from(query.entries()).map(([key, val]) => [key, +val || 0])
     );
@@ -58,9 +50,5 @@ class Checkout extends Component {
     );
   }
 }
-
-Checkout.propTypes = {};
-
-Checkout.defaultProps = {};
 
 export default Checkout;
