@@ -1654,3 +1654,26 @@ const formIsValid = Object.values(orderForm).every(value =>
   value.validation ? value.valid : true
 );
 ```
+
+## Section 14: Redux
+
+### 253. The Complexity of Managing State
+
+https://kutt.it/pL9L1k
+
+* React does not react to global changes.
+
+### 254. Understanding the Redux Flow
+
+https://kutt.it/baTY20
+
+
+
+![image-20210205151446433](https://cdn.jsdelivr.net/gh/carlba/assets@master/hEP5gl-image-20210205151446433.png)
+
+* Central place to manage state.
+* Giant Javascript object.
+
+### 255. Setting Up Reducer and Store
+
+https://kutt.it/uuK6JN
