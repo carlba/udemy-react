@@ -2012,3 +2012,9 @@ export const DELETE_RESULT = 'DELETE_RESULT';
 ### 267. Combining Multiple Reducers
 
 https://kutt.it/7bjhvt
+
+### 268. Understanding State Types
+
+https://kutt.it/QtzK6W
+
+![image-20210205203139679](https://cdn.jsdelivr.net/gh/carlba/assets@master/EG0yLJ-image-20210205203139679.png)
