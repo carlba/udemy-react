@@ -2031,9 +2031,10 @@ https://kutt.it/QtzK6W
 
 https://kutt.it/kbdghq
 
-
-
 ### 274. Installing Redux and React Redux
 
 https://kutt.it/roSaIg
 
+### 275. Basic Redux Setup
+
+https://kutt.it/rRGZ93
