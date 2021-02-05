@@ -74,9 +74,11 @@ class ContactData extends Component {
             { value: 'cheapest', displayValue: 'Cheapest' }
           ]
         },
+        validation: {},
         value: ''
       }
     },
+    formIsValid: true,
     loading: false
   };
 
@@ -108,6 +110,11 @@ class ContactData extends Component {
 
   checkValidity(value, rules) {
     let isValid = true;
+
+    if (!rules) {
+      return true;
+    }
+
     if (rules.required) {
       isValid = value.trim() !== '' && isValid;
     }
@@ -122,20 +129,19 @@ class ContactData extends Component {
 
   handleInputChange = (event, inputId) => {
     this.setState((prevState, props) => {
-      const updatedForm = {
-        orderForm: {
-          ...prevState.orderForm,
-          [inputId]: {
-            ...prevState.orderForm[inputId],
-            value: event.target.value,
-            valid: this.checkValidity(event.target.value, prevState.orderForm[inputId].validation),
-            touched: true
-          }
+      const orderForm = {
+        ...prevState.orderForm,
+        [inputId]: {
+          ...prevState.orderForm[inputId],
+          value: event.target.value,
+          valid: this.checkValidity(event.target.value, prevState.orderForm[inputId].validation),
+          touched: true
         }
       };
-
-      console.log(updatedForm);
-      return updatedForm;
+      const formIsValid = Object.values(orderForm).every(value =>
+        value.validation ? value.valid : true
+      );
+      return { orderForm, formIsValid };
     });
   };
 
@@ -168,7 +174,7 @@ class ContactData extends Component {
       <div className={styles.ContactData}>
         <h4>Enter your contact data</h4>
         {form}
-        <Button buttonType="Success" onClick={this.handleOrder}>
+        <Button buttonType="Success" disabled={!this.state.formIsValid} onClick={this.handleOrder}>
           ORDER
         </Button>
       </div>

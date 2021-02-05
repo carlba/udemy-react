@@ -1637,3 +1637,12 @@ https://kutt.it/xTOKH8
 
 https://kutt.it/fT4Ecqå
 
+### 247. Handling Overall Form Validity
+
+https://kutt.it/IAN6gy
+
+```jsx
+const formIsValid = Object.values(orderForm).every(value =>
+  value.validation ? value.valid : true
+);
+```
