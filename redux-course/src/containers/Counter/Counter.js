@@ -39,10 +39,10 @@ class Counter extends Component {
     return (
       <div>
         <CounterOutput value={this.props.ctr} />
-        <CounterControl label="Increment" clicked={() => this.counterChangedHandler('inc')} />
-        <CounterControl label="Decrement" clicked={() => this.counterChangedHandler('dec')} />
-        <CounterControl label="Add 5" clicked={() => this.counterChangedHandler('add', 5)} />
-        <CounterControl label="Subtract 5" clicked={() => this.counterChangedHandler('sub', 5)} />
+        <CounterControl label="Increment" clicked={this.props.onIncrementCounter} />
+        <CounterControl label="Decrement" clicked={this.props.onDecrementCounter} />
+        <CounterControl label="Add 5" clicked={this.props.onAddCounter} />
+        <CounterControl label="Subtract 5" clicked={this.props.onSubtractCounter} />
       </div>
     );
   }
@@ -54,4 +54,25 @@ class Counter extends Component {
  */
 const mapStateToProps = state => ({ ctr: state.counter });
 
-export default connect(mapStateToProps)(Counter);
+/**
+ * This functions maps props to actions in the state. They then need to be handled by a
+ * reducer. The actions `onIncrementCounter` will be available on the class as
+ * `this.onIncrementCounter()`.
+ *
+ */
+const mapDispatchToProps = dispatch => ({
+  onIncrementCounter: () => {
+    return dispatch({ type: 'INCREMENT' });
+  },
+  onDecrementCounter: () => {
+    return dispatch({ type: 'DECREMENT' });
+  },
+  onAddCounter: () => {
+    return dispatch({ type: 'ADD' });
+  },
+  onSubtractCounter: () => {
+    return dispatch({ type: 'SUBTRACT' });
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

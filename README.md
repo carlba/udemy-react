@@ -1774,3 +1774,26 @@ export default connect(mapStateToProps)(Counter);
 ```
 
 * The connect method returns a HOC function that can wrap a Component. It takes two argument of which the first is a function that maps a part of the state to a prop in the component.
+
+### 260. Dispatching Actions from within the Component
+
+https://kutt.it/avVpX6
+
+```jsx
+/**
+ * This functions maps props to actions in the state. They then need to be handled by a
+ * reducer. The actions `onIncrementCounter` will be available on the class as
+ * `this.onIncrementCounter()`.
+ *
+ */
+const mapDispatchToProps = dispatch => ({
+  onIncrementCounter: () => {
+    return dispatch({ type: 'INCREMENT' });
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+```
+
+
+
