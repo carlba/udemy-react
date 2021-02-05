@@ -1697,3 +1697,7 @@ console.log(store.getState());
 * Most simple use case of redux
 * We create a store with an initial state and add a root reducer that does nothing.
 * It is then possible to retrieve the state from the store using `store.getState()`
+
+### 256. Dispatching Actions
+
+https://kutt.it/jm3qBR
