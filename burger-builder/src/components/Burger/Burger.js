@@ -30,10 +30,10 @@ const Burger = props => {
 
 Burger.propTypes = {
   ingredients: PropTypes.exact({
-    salad: PropTypes.number.isRequired,
-    bacon: PropTypes.number.isRequired,
-    cheese: PropTypes.number.isRequired,
-    meat: PropTypes.number.isRequired
+    salad: PropTypes.number,
+    bacon: PropTypes.number,
+    cheese: PropTypes.number,
+    meat: PropTypes.number
   })
 };
 
