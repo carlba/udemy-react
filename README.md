@@ -1595,3 +1595,7 @@ https://kutt.it/Tmnsxz
 ### 239. Adding a Dropdown Component
 
 https://kutt.it/eVEOiZ
+
+### 240. Handling User Input
+
+https://kutt.it/CWpGbF

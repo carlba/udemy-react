@@ -8,17 +8,32 @@ const Input = props => {
   switch (props.elementType) {
     case 'input':
       inputElement = (
-        <input className={styles.InputElement} {...props.elementConfig} value={props.value} />
+        <input
+          className={styles.InputElement}
+          {...props.elementConfig}
+          value={props.value}
+          onChange={props.onInputChange}
+        />
       );
       break;
     case 'textarea':
       inputElement = (
-        <textarea className={styles.InputElement} {...props.elementConfig} value={props.value} />
+        <textarea
+          className={styles.InputElement}
+          {...props.elementConfig}
+          value={props.value}
+          onChange={props.onInputChange}
+        />
       );
       break;
     case 'select':
       inputElement = (
-        <select className={styles.InputElement} {...props.elementConfig} value={props.value}>
+        <select
+          className={styles.InputElement}
+          {...props.elementConfig}
+          value={props.value}
+          onChange={props.onInputChange}
+        >
           {props.elementConfig.options.map(option => (
             <option key={option.value} value={option.value}>
               {option.displayValue}
@@ -28,7 +43,9 @@ const Input = props => {
       );
       break;
     default:
-      inputElement = <input className={styles.inputElement} value={props.value} />;
+      inputElement = (
+        <input className={styles.inputElement} value={props.value} onChange={props.onInputChange} />
+      );
   }
 
   return (
@@ -42,7 +59,8 @@ const Input = props => {
 Input.propTypes = {
   elementType: PropTypes.string,
   elementConfig: PropTypes.exact({ type: PropTypes.string, placeholder: PropTypes.string }),
-  value: PropTypes.string
+  value: PropTypes.string,
+  onInputChange: PropTypes.func
 };
 
 Input.defaultProps = {};

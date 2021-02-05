@@ -83,6 +83,15 @@ class ContactData extends Component {
     }
   };
 
+  handleInputChange = (event, inputId) => {
+    this.setState((prevState, props) => ({
+      orderForm: {
+        ...prevState.orderForm,
+        [inputId]: { ...prevState.orderForm[inputId], value: event.target.value }
+      }
+    }));
+  };
+
   render() {
     const formElementsArray = Object.entries(this.state.orderForm).reduce((acc, [id, config]) => {
       return [...acc, { ...config, id }];
@@ -96,6 +105,7 @@ class ContactData extends Component {
             elementType={formElement.elementType}
             elementConfig={formElement.elementConfig}
             value={formElement.value}
+            onInputChange={event => this.handleInputChange(event, formElement.id)}
           ></Input>
         ))}
       </form>
