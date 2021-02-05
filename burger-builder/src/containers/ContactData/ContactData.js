@@ -19,7 +19,8 @@ class ContactData extends Component {
         },
         value: '',
         validation: { required: true },
-        valid: false
+        valid: false,
+        touched: false
       },
       street: {
         elementType: 'input',
@@ -29,7 +30,8 @@ class ContactData extends Component {
         },
         value: '',
         validation: { required: true },
-        valid: false
+        valid: false,
+        touched: false
       },
       country: {
         elementType: 'input',
@@ -39,7 +41,8 @@ class ContactData extends Component {
         },
         value: '',
         validation: { required: true },
-        valid: false
+        valid: false,
+        touched: false
       },
       zipCode: {
         elementType: 'input',
@@ -49,7 +52,8 @@ class ContactData extends Component {
         },
         value: '',
         validation: { required: true, minLength: 5, maxLength: 5 },
-        valid: false
+        valid: false,
+        touched: false
       },
       email: {
         elementType: 'input',
@@ -59,7 +63,8 @@ class ContactData extends Component {
         },
         value: '',
         validation: { required: true },
-        valid: false
+        valid: false,
+        touched: false
       },
       deliveryMethod: {
         elementType: 'select',
@@ -123,10 +128,12 @@ class ContactData extends Component {
           [inputId]: {
             ...prevState.orderForm[inputId],
             value: event.target.value,
-            valid: this.checkValidity(event.target.value, prevState.orderForm[inputId].validation)
+            valid: this.checkValidity(event.target.value, prevState.orderForm[inputId].validation),
+            touched: true
           }
         }
       };
+
       console.log(updatedForm);
       return updatedForm;
     });
@@ -146,7 +153,8 @@ class ContactData extends Component {
             elementConfig={formElement.elementConfig}
             value={formElement.value}
             valid={formElement.valid}
-            shouldValidate={formElement.validation}
+            shouldValidate={!!formElement.validation}
+            touched={formElement.touched}
             onInputChange={event => this.handleInputChange(event, formElement.id)}
           ></Input>
         ))}

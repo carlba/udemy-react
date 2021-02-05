@@ -1632,3 +1632,8 @@ checkValidity(value, rules) {
 ### 244. Adding Validation Feedback
 
 https://kutt.it/xTOKH8
+
+### 245. Improving Visual Feedback
+
+https://kutt.it/fT4Ecqå
+

@@ -6,7 +6,7 @@ const Input = props => {
   let inputElement = null;
   const inputClasses = [styles.InputElement];
 
-  if (!props.valid && props.shouldValidate) {
+  if (!props.valid && props.shouldValidate && props.touched) {
     inputClasses.push(styles.Invalid);
   }
 
@@ -73,6 +73,7 @@ Input.propTypes = {
   value: PropTypes.string,
   valid: PropTypes.bool,
   shouldValidate: PropTypes.bool,
+  touched: PropTypes.bool,
   onInputChange: PropTypes.func
 };
 
