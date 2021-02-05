@@ -1987,5 +1987,27 @@ They can provide a useful alternative to writing manual immutable update logic.
 
 [Immutable Data#Immutable Update Utilities](https://github.com/markerikson/redux-ecosystem-links/blob/master/immutable-data.md#immutable-update-utilities) section of the [Redux Addons Catalog](https://github.com/markerikson/redux-ecosystem-links).
 
+### 266. Outsourcing Action Types
 
+https://kutt.it/Q5mb7a
+
+* It is good practice to implement an `store/actions.js` file
+
+```jsx
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
+export const ADD = 'ADD';
+export const SUBTRACT = 'SUBTRACT';
+export const STORE_RESULT = 'STORE_RESULT';
+export const DELETE_RESULT = 'DELETE_RESULT';
+
+```
+
+* This can then be imported into other files, like so:
+
+  ```jsx
+  import * as actions from '../../store/actions';
+  ```
+
+  
 
