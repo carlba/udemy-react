@@ -17,7 +17,9 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Your Name'
         },
-        value: ''
+        value: '',
+        validation: { required: true },
+        valid: false
       },
       street: {
         elementType: 'input',
@@ -25,7 +27,9 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Your Street'
         },
-        value: ''
+        value: '',
+        validation: { required: true },
+        valid: false
       },
       country: {
         elementType: 'input',
@@ -33,7 +37,9 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Your Country'
         },
-        value: ''
+        value: '',
+        validation: { required: true },
+        valid: false
       },
       zipCode: {
         elementType: 'input',
@@ -41,7 +47,9 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Your Zip Code'
         },
-        value: ''
+        value: '',
+        validation: { required: true, minLength: 5, maxLength: 5 },
+        valid: false
       },
       email: {
         elementType: 'input',
@@ -49,7 +57,9 @@ class ContactData extends Component {
           type: 'email',
           placeholder: 'Your Email'
         },
-        value: ''
+        value: '',
+        validation: { required: true },
+        valid: false
       },
       deliveryMethod: {
         elementType: 'select',
@@ -91,13 +101,35 @@ class ContactData extends Component {
     }
   };
 
+  checkValidity(value, rules) {
+    let isValid = true;
+    if (rules.required) {
+      isValid = value.trim() !== '' && isValid;
+    }
+    if (rules.minLength) {
+      isValid = value.length >= rules.minLength && isValid;
+    }
+    if (rules.maxLength) {
+      isValid = value.length <= rules.maxLength && isValid;
+    }
+    return isValid;
+  }
+
   handleInputChange = (event, inputId) => {
-    this.setState((prevState, props) => ({
-      orderForm: {
-        ...prevState.orderForm,
-        [inputId]: { ...prevState.orderForm[inputId], value: event.target.value }
-      }
-    }));
+    this.setState((prevState, props) => {
+      const updatedForm = {
+        orderForm: {
+          ...prevState.orderForm,
+          [inputId]: {
+            ...prevState.orderForm[inputId],
+            value: event.target.value,
+            valid: this.checkValidity(event.target.value, prevState.orderForm[inputId].validation)
+          }
+        }
+      };
+      console.log(updatedForm);
+      return updatedForm;
+    });
   };
 
   render() {
