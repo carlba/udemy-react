@@ -1827,3 +1827,6 @@ const mapDispatchToProps = dispatch => ({
 });
 ```
 
+### 263. Updating State Immutably and Deleting
+
+https://kutt.it/shrkKP
