@@ -10,16 +10,8 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axiosOrders from '../../axios-orders';
 import * as actions from '../../store/actions';
 
-const INGREDIENT_PRICES = {
-  salad: 0.5,
-  cheese: 0.4,
-  meat: 1.3,
-  bacon: 0.7
-};
-
 class BurgerBuilder extends Component {
   state = {
-    totalPrice: 4,
     isReadyToOrder: false,
     isOrdering: false,
     loading: false
@@ -42,29 +34,6 @@ class BurgerBuilder extends Component {
     });
   }
 
-  handleAddIngredient = type => {
-    const updatedCount = this.props.ings[type] + 1;
-    const updatedState = {
-      ingredients: { ...this.props.ings, [type]: updatedCount },
-      totalPrice: this.state.totalPrice + INGREDIENT_PRICES[type]
-    };
-    this.setState(updatedState);
-    this.updateIsReadyToOrder(updatedState.ingredients);
-  };
-
-  handleRemoveIngredient = type => {
-    if (this.props.ings[type] <= 0) {
-      return;
-    }
-    const updatedCount = this.props.ings[type] - 1;
-    const updatedState = {
-      ingredients: { ...this.props.ings, [type]: updatedCount },
-      totalPrice: this.state.totalPrice - INGREDIENT_PRICES[type]
-    };
-    this.setState(updatedState);
-    this.updateIsReadyToOrder(updatedState.ingredients);
-  };
-
   handleOrder = () => {
     this.setState({ isOrdering: true });
   };
@@ -76,7 +45,7 @@ class BurgerBuilder extends Component {
   handleOrderContinue = async () => {
     const queryString = new URLSearchParams({
       ...this.props.ings,
-      totalPrice: this.state.totalPrice
+      totalPrice: this.props.totalPrice
     }).toString();
     this.props.history.push({ pathname: '/checkout', search: queryString });
   };
@@ -98,14 +67,14 @@ class BurgerBuilder extends Component {
             isReadyToOrder={this.state.isReadyToOrder}
             isOrdering={this.state.isOrdering}
             onOrdered={this.handleOrder}
-            price={this.state.totalPrice}
+            price={this.props.totalPrice}
           ></BuildControls>
         </React.Fragment>
       );
       orderSummary = (
         <OrderSummary
           ingredients={this.props.ings}
-          totalPrice={this.state.totalPrice}
+          totalPrice={this.props.totalPrice}
           onOrderCancel={this.handleOrderCancel}
           onOrderContinue={this.handleOrderContinue}
         ></OrderSummary>
@@ -131,7 +100,8 @@ class BurgerBuilder extends Component {
 }
 
 const mapStateToProps = state => ({
-  ings: state.ingredients
+  ings: state.ingredients,
+  totalPrice: state.totalPrice
 });
 
 const mapDispatchToProps = dispatch => ({
