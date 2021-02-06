@@ -2177,3 +2177,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(burgerBuilderReducer, composeEnhancers(applyMiddleware(thunk)));
 ```
 
+### 304. Fetching Ingredients Asynchronously
+
+https://kutt.it/iPqV6C
+
+
+
+### 306. Changing the Order of our Ingredients Manually
+
+https://kutt.it/lvqFdF

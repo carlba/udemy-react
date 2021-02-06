@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import axiosOrders from '../../axios-orders';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/ui/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../..//components/ui/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import axiosOrders from '../../axios-orders';
+
 import * as actions from '../../store/actions';
 
 class BurgerBuilder extends Component {
@@ -16,15 +17,8 @@ class BurgerBuilder extends Component {
     loading: false
   };
 
-  async componentDidMount() {
-    // try {
-    //   const response = await axiosOrders.get(
-    //     'https://udemy-react-burger-build-default-rtdb.firebaseio.com/ingredients.json'
-    //   );
-    //   this.setState({ ingredients: response.data });
-    // } catch (err) {
-    //   console.log('Error on getting ingredients');
-    // }
+  componentDidMount() {
+    this.props.onInitIngredients();
   }
 
   isReadyToOrder(ingredients) {
@@ -73,10 +67,6 @@ class BurgerBuilder extends Component {
         ></OrderSummary>
       );
     }
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
-    }
-
     return (
       <React.Fragment>
         <Modal
@@ -94,12 +84,14 @@ class BurgerBuilder extends Component {
 
 const mapStateToProps = state => ({
   ings: state.ingredients,
-  totalPrice: state.totalPrice
+  totalPrice: state.totalPrice,
+  error: state.error
 });
 
 const mapDispatchToProps = dispatch => ({
   onAddIngredient: name => dispatch(actions.addIngredient(name)),
-  onRemoveIngredient: name => dispatch(actions.removeIngredient(name))
+  onRemoveIngredient: name => dispatch(actions.removeIngredient(name)),
+  onInitIngredients: () => dispatch(actions.initIngredients())
 });
 
 export default connect(
