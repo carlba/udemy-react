@@ -78,7 +78,7 @@ class ContactData extends Component {
           ]
         },
         validation: {},
-        value: ''
+        value: 'fastest'
       }
     },
     formIsValid: true
@@ -179,9 +179,9 @@ class ContactData extends Component {
 ContactData.propTypes = { onClick: PropTypes.func, totalPrice: PropTypes.number };
 
 const mapStateToProps = state => ({
-  ings: state.ingredients,
-  totalPrice: state.totalPrice,
-  loading: state.loading
+  ings: state.burgerBuilder.ingredients,
+  totalPrice: state.burgerBuilder.totalPrice,
+  loading: state.order.loading
 });
 
 const mapDispatchToProps = dispatch => {

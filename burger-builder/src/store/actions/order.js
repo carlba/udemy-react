@@ -2,7 +2,7 @@ import * as actionTypes from './actionsTypes';
 import axios from '../../axios-orders';
 
 export const orderBurgerSuccess = (id, data) => ({
-  type: actionTypes.ORDER_BURGER_FAIL,
+  type: actionTypes.ORDER_BURGER_SUCCESS,
   id,
   data
 });
@@ -21,8 +21,7 @@ export const orderBurger = data => {
     dispatch(orderBurgerStart());
     try {
       const response = await axios.post('/orders.json', data);
-      console.log(response.data);
-      dispatch(orderBurgerSuccess(response.data, data));
+      dispatch(orderBurgerSuccess(response.data.name, data));
     } catch (error) {
       console.log('Error while posting order', error);
       dispatch(orderBurgerFail(error));
