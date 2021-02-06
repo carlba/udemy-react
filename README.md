@@ -2120,3 +2120,14 @@ https://kutt.it/m9Wwrh
 https://kutt.it/driT5p
 
 https://kutt.it/GBYicE
+
+### 289. Handling Asynchronous Code
+
+https://kutt.it/FQs5PH
+
+https://github.com/reduxjs/redux-thunk
+
+```bash
+npm install --save redux-thunk
+```
+

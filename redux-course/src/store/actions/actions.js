@@ -9,5 +9,15 @@ export const increment = () => ({ type: INCREMENT });
 export const decrement = () => ({ type: DECREMENT });
 export const add = value => ({ type: ADD, value });
 export const subtract = value => ({ type: SUBTRACT, value });
-export const storeResult = result => ({ type: STORE_RESULT, result });
+
+export const saveResult = result => ({ type: STORE_RESULT, result });
+
+export const storeResult = result => {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(saveResult(result));
+    }, 2000);
+  };
+};
+
 export const deleteResult = id => ({ type: DELETE_RESULT, id });
