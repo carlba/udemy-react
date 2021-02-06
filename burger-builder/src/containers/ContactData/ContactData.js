@@ -81,8 +81,7 @@ class ContactData extends Component {
         value: ''
       }
     },
-    formIsValid: true,
-    loading: false
+    formIsValid: true
   };
 
   handleOrder = async event => {
@@ -161,7 +160,7 @@ class ContactData extends Component {
         ))}
       </form>
     );
-    if (this.state.loading) {
+    if (this.props.loading) {
       form = <Spinner />;
     }
 
@@ -179,10 +178,14 @@ class ContactData extends Component {
 
 ContactData.propTypes = { onClick: PropTypes.func, totalPrice: PropTypes.number };
 
-const mapStateToProps = state => ({ ings: state.ingredients, totalPrice: state.totalPrice });
+const mapStateToProps = state => ({
+  ings: state.ingredients,
+  totalPrice: state.totalPrice,
+  loading: state.loading
+});
 
 const mapDispatchToProps = dispatch => {
-  return { onOrderBurger: data => dispatch(actions.orderBurgerStart()) };
+  return { onOrderBurger: data => dispatch(actions.orderBurger(data)) };
 };
 
 export default connect(

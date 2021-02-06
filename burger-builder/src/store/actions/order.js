@@ -12,8 +12,13 @@ export const orderBurgerFail = error => ({
   error
 });
 
-export const orderBurgerStart = data => {
+export const orderBurgerStart = () => {
+  return { type: actionTypes.ORDER_BURGER_START };
+};
+
+export const orderBurger = data => {
   return async dispatch => {
+    dispatch(orderBurgerStart());
     try {
       const response = await axios.post('/orders.json', data);
       console.log(response.data);

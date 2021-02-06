@@ -2189,3 +2189,7 @@ https://kutt.it/lvqFdF
 ### 307. Adding Order Actions
 
 https://kutt.it/b8W439
+
+### 309. The Order Reducer
+
+https://kutt.it/IfTy2v
