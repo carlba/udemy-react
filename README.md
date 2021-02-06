@@ -2135,3 +2135,11 @@ npm install --save redux-thunk
 
 https://kutt.it/w9q2QE
 
+### 291. Where to Put Data Transforming Logic?
+
+https://kutt.it/J0gykr
+
+![image-20210206140543280](https://cdn.jsdelivr.net/gh/carlba/assets@master/pBUVBz-image-20210206140543280.png)
+
+* The reducer should modify the state
+* The action creator can clean server data but nothing more.
