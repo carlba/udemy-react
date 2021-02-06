@@ -2065,3 +2065,27 @@ https://kutt.it/5H6YhD
 
 ![image-20210206115519377](https://cdn.jsdelivr.net/gh/carlba/assets@master/uiBvaX-image-20210206115519377.png)
 
+A middleware looks and can be used like this:
+
+```jsx
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+
+const logger = store => {
+  return next => {
+    return action => {
+      console.log('[Middleware] Dispatching', action);
+      const result = next(action);
+      console.log('[Middleware] next state', JSON.stringify(store.getState(), null, 2));
+      return result;
+    };
+  };
+};
+
+const store = createStore(
+  combineReducers({ counter: counterReducer, result: resultReducer }),
+  applyMiddleware(logger)
+);
+```
+
+
+
