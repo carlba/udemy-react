@@ -1,6 +1,8 @@
 import * as actionTypes from './actionsTypes';
 import axios from '../../axios-orders';
 
+import { convertObjectToArray } from '../../utils/utils';
+
 export const orderBurgerSuccess = (id, data) => ({
   type: actionTypes.ORDER_BURGER_SUCCESS,
   id,
@@ -30,3 +32,32 @@ export const orderBurger = data => {
 };
 
 export const orderBurgerInit = () => ({ type: actionTypes.ORDER_BURGER_INIT });
+
+export const fetchOrdersSuccess = orders => {
+  return { type: actionTypes.FETCH_ORDERS_SUCCESS, orders };
+};
+
+export const fetchOrdersFail = error => {
+  return { type: actionTypes.FETCH_ORDERS_FAIL, error };
+};
+
+export const fetchOrdersStart = () => {
+  return { type: actionTypes.FETCH_ORDERS_START };
+};
+
+export const fetchOrders = () => {
+  return async dispatch => {
+    dispatch(fetchOrdersStart());
+    try {
+      const response = await axios.get(
+        'https://udemy-react-burger-build-default-rtdb.firebaseio.com/orders.json'
+      );
+      const orders = convertObjectToArray(response.data);
+
+      dispatch(fetchOrdersSuccess(orders));
+    } catch (error) {
+      console.log('Error on getting orders', error);
+      dispatch(fetchOrdersFail(error));
+    }
+  };
+};

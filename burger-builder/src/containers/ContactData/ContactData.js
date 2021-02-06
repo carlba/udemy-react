@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import styles from './ContactData.module.css';
 import Button from '../../components/ui/Button/Button';
-import Spinner from '../../components/ui/Spinner/Spinner';
+import { Spinner } from '../../components/ui/Spinner/Spinner';
 import axiosOrders from '../../axios-orders';
 import Input from '../../components/ui/Input/Input';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';

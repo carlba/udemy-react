@@ -6,7 +6,7 @@ import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/ui/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
-import Spinner from '../..//components/ui/Spinner/Spinner';
+import { Spinner } from '../..//components/ui/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 import * as actions from '../../store/actions';
