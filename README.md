@@ -2056,3 +2056,12 @@ https://kutt.it/827SQv
 ### 280. Adjusting Checkout and Contact Data
 
 https://kutt.it/4fXZnS
+
+## Section 16: Redux Advanced
+
+### 284. Adding Middleware
+
+https://kutt.it/5H6YhD
+
+![image-20210206115519377](https://cdn.jsdelivr.net/gh/carlba/assets@master/uiBvaX-image-20210206115519377.png)
+
