@@ -2089,3 +2089,25 @@ const store = createStore(
 
 
 
+### 285. Using the Redux Devtools
+
+https://kutt.it/43JQAy
+
+### Advanced store setup
+
+If you setup your store with [middleware and enhancers](http://redux.js.org/docs/api/applyMiddleware.html), change:
+
+```
+  import { createStore, applyMiddleware, compose } from 'redux';
+
++ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
++ const store = createStore(reducer, /* preloadedState, */ composeEnhancers(
+- const store = createStore(reducer, /* preloadedState, */ compose(
+    applyMiddleware(...middleware)
+  ));
+```
+
+> Note that when the extension is not installed, we’re using Redux compose here.
+
+
+
