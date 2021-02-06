@@ -1,4 +1,4 @@
-import * as actions from './actions';
+import * as actions from '../actions/actionsTypes';
 
 const initialState = {
   ingredients: { salad: 0, bacon: 0, cheese: 0, meat: 0 },
