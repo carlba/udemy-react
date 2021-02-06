@@ -2131,3 +2131,7 @@ https://github.com/reduxjs/redux-thunk
 npm install --save redux-thunk
 ```
 
+### 290. Restructuring Actions
+
+https://kutt.it/w9q2QE
+
