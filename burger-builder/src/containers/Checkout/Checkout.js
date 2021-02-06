@@ -10,8 +10,8 @@ class Checkout extends Component {
   handleCheckoutContinue = () => {
     this.props.history.replace('/checkout/contact-data');
   };
-
-  componentWillMount() {
+  //TODO Fix UNSAFE_componentWillMount
+  UNSAFE_componentWillMount() {
     this.props.onInitOrderBurger();
   }
 
