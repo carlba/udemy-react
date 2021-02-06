@@ -2159,3 +2159,21 @@ https://kutt.it/enVXeR
 ### 302. Creating Action Creators
 
 https://kutt.it/QXBPj6
+
+### 303. Executing Asynchronous Code
+
+https://kutt.it/oBPtFs
+
+```jsx
+npm install --save redux-thunk
+```
+
+```jsx
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(burgerBuilderReducer, composeEnhancers(applyMiddleware(thunk)));
+```
+
