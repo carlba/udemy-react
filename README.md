@@ -2181,8 +2181,11 @@ const store = createStore(burgerBuilderReducer, composeEnhancers(applyMiddleware
 
 https://kutt.it/iPqV6C
 
-
-
 ### 306. Changing the Order of our Ingredients Manually
 
 https://kutt.it/lvqFdF
+
+
+### 307. Adding Order Actions
+
+https://kutt.it/b8W439

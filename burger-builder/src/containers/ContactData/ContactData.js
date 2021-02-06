@@ -8,6 +8,8 @@ import Button from '../../components/ui/Button/Button';
 import Spinner from '../../components/ui/Spinner/Spinner';
 import axiosOrders from '../../axios-orders';
 import Input from '../../components/ui/Input/Input';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+import * as actions from '../../store/actions/index';
 
 class ContactData extends Component {
   state = {
@@ -85,7 +87,6 @@ class ContactData extends Component {
 
   handleOrder = async event => {
     event.preventDefault();
-    this.setState({ loading: true });
     const orderFormData = Object.entries(this.state.orderForm).reduce((acc, [id, { value }]) => {
       return {
         ...acc,
@@ -99,14 +100,7 @@ class ContactData extends Component {
       orderData: orderFormData
     };
 
-    try {
-      await axiosOrders.post('/orders.json', order);
-      this.setState({ loading: false });
-      this.props.history.push('/');
-    } catch (err) {
-      console.log('Error while posting order', err);
-      this.setState({ loading: false });
-    }
+    this.props.onOrderBurger(order);
   };
 
   checkValidity(value, rules) {
@@ -187,4 +181,11 @@ ContactData.propTypes = { onClick: PropTypes.func, totalPrice: PropTypes.number 
 
 const mapStateToProps = state => ({ ings: state.ingredients, totalPrice: state.totalPrice });
 
-export default connect(mapStateToProps)(withRouter(ContactData));
+const mapDispatchToProps = dispatch => {
+  return { onOrderBurger: data => dispatch(actions.orderBurgerStart()) };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(withErrorHandler(ContactData, axiosOrders)));
