@@ -2143,3 +2143,12 @@ https://kutt.it/J0gykr
 
 * The reducer should modify the state
 * The action creator can clean server data but nothing more.
+
+## Section 17: Redux Advanced: Burger Project
+
+### 300:301: Intro
+
+https://kutt.it/IjxiOA
+
+https://github.com/zalmoxisus/redux-devtools-extension
+
