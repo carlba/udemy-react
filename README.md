@@ -2198,3 +2198,7 @@ https://kutt.it/IfTy2v
 
 https://kutt.it/67Cwfv
 
+### 313. Handling Purchases & Updating the UI
+
+https://kutt.it/QhpHLv
+

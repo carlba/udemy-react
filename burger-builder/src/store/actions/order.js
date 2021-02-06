@@ -28,3 +28,5 @@ export const orderBurger = data => {
     }
   };
 };
+
+export const orderBurgerInit = () => ({ type: actionTypes.ORDER_BURGER_INIT });

@@ -4,17 +4,25 @@ import { connect } from 'react-redux';
 
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from '../ContactData/ContactData';
+import * as actions from '../../store/actions';
 
 class Checkout extends Component {
   handleCheckoutContinue = () => {
     this.props.history.replace('/checkout/contact-data');
   };
 
+  componentWillMount() {
+    this.props.onInitOrderBurger();
+  }
+
   render() {
     let summary = <Redirect to="/" />;
+
     if (this.props.ings) {
+      const orderedRedirect = this.props.isOrdered ? <Redirect to="/" /> : null;
       summary = (
         <div>
+          {orderedRedirect}
           <CheckoutSummary
             onCancel={this.handleCheckoutCancel}
             onContinue={this.handleCheckoutContinue}
@@ -29,7 +37,12 @@ class Checkout extends Component {
 }
 
 const mapStateToProps = state => ({
-  ings: state.burgerBuilder.ingredients
+  ings: state.burgerBuilder.ingredients,
+  isOrdered: state.order.isOrdered
 });
 
-export default connect(mapStateToProps)(Checkout);
+const mapDispatchToProps = dispatch => {
+  return { onInitOrderBurger: () => dispatch(actions.orderBurgerInit()) };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
