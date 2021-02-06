@@ -420,7 +420,7 @@ By the way, if you somehow also want to define a global (i.e. un-transformed) CS
 
 ```css
 :global .Post {
-  ...;
+  color: red;
 }
 ```
 
@@ -2111,3 +2111,6 @@ If you setup your store with [middleware and enhancers](http://redux.js.org/docs
 
 
 
+### 286. Executing Asynchronous Code - Introduction
+
+https://kutt.it/m9Wwrh
