@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import styles from './ContactData.module.css';
@@ -93,7 +94,7 @@ class ContactData extends Component {
     }, {});
 
     const order = {
-      ingredients: this.props.ingredients,
+      ingredients: this.props.ings,
       price: this.props.totalPrice,
       orderData: orderFormData
     };
@@ -184,4 +185,6 @@ class ContactData extends Component {
 
 ContactData.propTypes = { onClick: PropTypes.func, totalPrice: PropTypes.number };
 
-export default withRouter(ContactData);
+const mapStateToProps = state => ({ ings: state.ingredients, totalPrice: state.totalPrice });
+
+export default connect(mapStateToProps)(withRouter(ContactData));

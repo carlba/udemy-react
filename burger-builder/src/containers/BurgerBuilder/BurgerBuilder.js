@@ -40,11 +40,7 @@ class BurgerBuilder extends Component {
   };
 
   handleOrderContinue = async () => {
-    const queryString = new URLSearchParams({
-      ...this.props.ings,
-      totalPrice: this.props.totalPrice
-    }).toString();
-    this.props.history.push({ pathname: '/checkout', search: queryString });
+    this.props.history.push({ pathname: '/checkout' });
   };
 
   render() {
