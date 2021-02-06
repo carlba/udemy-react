@@ -2114,3 +2114,9 @@ If you setup your store with [middleware and enhancers](http://redux.js.org/docs
 ### 286. Executing Asynchronous Code - Introduction
 
 https://kutt.it/m9Wwrh
+
+### 287. Introducing Action Creators & 288. Action Creators & Async Code
+
+https://kutt.it/driT5p
+
+https://kutt.it/GBYicE
