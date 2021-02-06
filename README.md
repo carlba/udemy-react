@@ -2048,3 +2048,7 @@ https://kutt.it/AZbOGZ
 https://kutt.it/P4RXWd
 
 ### 278. Working on the Total Price Calculation
+
+### 279. Redux & UI State
+
+https://kutt.it/827SQv

@@ -12,7 +12,6 @@ import * as actions from '../../store/actions';
 
 class BurgerBuilder extends Component {
   state = {
-    isReadyToOrder: false,
     isOrdering: false,
     loading: false
   };
@@ -28,10 +27,8 @@ class BurgerBuilder extends Component {
     // }
   }
 
-  updateIsReadyToOrder(ingredients) {
-    this.setState({
-      isReadyToOrder: !Object.values(ingredients).every(amount => amount === 0)
-    });
+  isReadyToOrder(ingredients) {
+    return !Object.values(ingredients).every(amount => amount === 0);
   }
 
   handleOrder = () => {
@@ -64,7 +61,7 @@ class BurgerBuilder extends Component {
             onIngredientAdd={this.props.onAddIngredient}
             onIngredientRemove={this.props.onRemoveIngredient}
             disabledInfo={disabledInfo}
-            isReadyToOrder={this.state.isReadyToOrder}
+            isReadyToOrder={this.isReadyToOrder(this.props.ings)}
             isOrdering={this.state.isOrdering}
             onOrdered={this.handleOrder}
             price={this.props.totalPrice}
