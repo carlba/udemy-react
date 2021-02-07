@@ -14,6 +14,21 @@ const ingredientReducer = (currentIngredients, action) => {
     case 'DELETE':
       return currentIngredients.filter(ingredient => ingredient.id !== action.id);
     default:
+      throw new Error(`Should not happen ${action.type}`);
+  }
+};
+
+const httpReducer = (httpState, action) => {
+  switch (action.type) {
+    case 'SEND':
+      return { isLoading: true, error: null };
+    case 'RESPONSE':
+      return { ...httpState, isLoading: false };
+    case 'ERROR':
+      return { isLoading: false, error: action.errorMessage };
+    case 'CLEAR':
+      return { ...httpState, error: null };
+    default:
       throw new Error('Should not happen');
   }
 };
@@ -28,17 +43,15 @@ export function convertObjectToArray(obj) {
 }
 
 function Ingredients() {
-  const [ingredients, dispatch] = useReducer(ingredientReducer, []);
-  // const [ingredients, setIngredients] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+  const [ingredients, dispatchIngredients] = useReducer(ingredientReducer, []);
+  const [httpState, dispatchHttp] = useReducer(httpReducer, { isLoading: false, error: null });
 
   const handleFilterChange = useCallback(filteredIngredients => {
-    dispatch({ type: 'UPDATE', ingredients: filteredIngredients });
+    dispatchIngredients({ type: 'UPDATE', ingredients: filteredIngredients });
   }, []);
 
   const handleAddIngredient = async ingredient => {
-    setIsLoading(true);
+    dispatchHttp({ type: 'SEND' });
     let json;
     try {
       const response = await fetch('https://udemy-react-hooks-course-default-rtdb.firebaseio.com/ingredients.json', {
@@ -47,38 +60,36 @@ function Ingredients() {
         headers: { 'Content-Type': 'application/json' }
       });
       json = await response.json();
+      dispatchHttp({ type: 'RESPONSE' });
     } catch (error) {
-      setError(error.message);
-      setIsLoading(false);
+      dispatchHttp({ type: 'ERROR', errorMessage: error.message });
     }
     if (json) {
-      setIsLoading(false);
-      dispatch({ type: 'CREATE', ingredient: { ...ingredient, id: json.name } });
+      dispatchIngredients({ type: 'CREATE', ingredient: { ...ingredient, id: json.name } });
     }
   };
 
   const handleRemoveIngredient = async ingredientId => {
-    setIsLoading(true);
+    dispatchHttp({ type: 'SEND' });
     try {
       await fetch(`https://udemy-react-hooks-course-default-rtdb.firebaseio.com/ingredients/${ingredientId}.json`, {
         method: 'DELETE'
       });
+      dispatchHttp({ type: 'RESPONSE' });
     } catch (error) {
-      setError(error.message);
-      setIsLoading(false);
+      dispatchHttp({ type: 'ERROR', errorMessage: error.message });
     }
-    setIsLoading(false);
-    dispatch({ type: 'DELETE', id: ingredientId });
+    dispatchIngredients({ type: 'DELETE', id: ingredientId });
   };
 
   const handleErrorModalOnClose = () => {
-    setError(null);
+    dispatchHttp({ type: 'CLEAR' });
   };
 
   return (
     <div className="App">
-      {error ? <ErrorModal onClose={handleErrorModalOnClose}>{error}</ErrorModal> : null}
-      <IngredientForm onAddIngredient={handleAddIngredient} isLoading={isLoading} />
+      {httpState.error ? <ErrorModal onClose={handleErrorModalOnClose}>{httpState.error}</ErrorModal> : null}
+      <IngredientForm onAddIngredient={handleAddIngredient} isLoading={httpState.isLoading} />
 
       <section>
         <Search onFilterChange={handleFilterChange} />

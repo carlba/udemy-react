@@ -144,3 +144,7 @@ You could think that accessing the name state after `setName('Max');` should yie
 ### 444. Understanding useReducer()
 
 https://kutt.it/qciFLX
+
+### 445. Using useReducer() for the Http State
+
+https://kutt.it/Rmj6Nx
