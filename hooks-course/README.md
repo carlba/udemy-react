@@ -58,3 +58,12 @@ https://kutt.it/iCdSpO
   }, []);
 ```
 
+### 436. Understanding useEffect() Dependencies and useCallback()
+
+```jsx
+  const handleFilterChange = useCallback(filteredIngredients => {
+    setIngredients(filteredIngredients);
+  }, []);
+```
+
+* The useCallback allows a function to not be recreated on re rendering
