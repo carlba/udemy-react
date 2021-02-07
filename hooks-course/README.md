@@ -42,3 +42,19 @@ const handleAddIngredient = async ingredient => {
 };
 ```
 
+### 435. useEffect() & Loading Data
+
+https://kutt.it/iCdSpO
+
+* `useEffect()` get's executed after each render cycle
+* The second argument controls on which state changes the effect will run `[]` means only on mount.
+
+```jsx
+  useEffect(() => {
+    fetch('https://udemy-react-hooks-course-default-rtdb.firebaseio.com/ingrediens.json')
+      .then(response => response.json())
+      .then(json => convertObjectToArray(json))
+      .then(dataArray => setIngredients(dataArray));
+  }, []);
+```
+
