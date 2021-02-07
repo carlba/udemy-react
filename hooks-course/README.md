@@ -106,3 +106,7 @@ https://kutt.it/A9dLV8
 * The returned function in the cleanup function that gets executed after the effect.
 
 * 
+
+### 441. Deleting Ingredients
+
+https://kutt.it/SbedDZ

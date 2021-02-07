@@ -30,13 +30,20 @@ function Ingredients() {
     setIngredients(prevIngredients => [...prevIngredients, { ...ingredient, id: json.name }]);
   };
 
+  const handleRemoveIngredient = async ingredientId => {
+    await fetch(`https://udemy-react-hooks-course-default-rtdb.firebaseio.com/ingredients/${ingredientId}.json`, {
+      method: 'DELETE'
+    });
+    setIngredients(prevIngredients => prevIngredients.filter(ingredient => ingredient.id !== ingredientId));
+  };
+
   return (
     <div className="App">
       <IngredientForm onAddIngredient={handleAddIngredient} />
 
       <section>
         <Search onFilterChange={handleFilterChange} />
-        <IngredientList ingredients={ingredients} onRemoveItem={() => {}} />
+        <IngredientList ingredients={ingredients} onRemoveItem={ingredientId => handleRemoveIngredient(ingredientId)} />
         {/* Need to add list here! */}
       </section>
     </div>
