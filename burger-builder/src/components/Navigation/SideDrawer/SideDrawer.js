@@ -16,7 +16,7 @@ const SideDrawer = props => {
           <Logo />
         </div>
         <nav>
-          <NavigationItems />
+          <NavigationItems isAuthenticated={props.isAuthenticated} />
         </nav>
       </div>
     </React.Fragment>
@@ -26,7 +26,8 @@ const SideDrawer = props => {
 SideDrawer.propTypes = {
   onClose: PropTypes.func,
   onOpen: PropTypes.func,
-  show: bool
+  show: bool,
+  isAuthenticated: PropTypes.bool
 };
 
 export default SideDrawer;

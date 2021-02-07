@@ -31,7 +31,7 @@ const BuildControls = props => (
       disabled={!props.isReadyToOrder}
       onClick={props.onOrdered}
     >
-      ORDER NOW
+      {props.isAuthenticated ? 'ORDER NOW' : 'SIGN UP TO ORDER'}
     </button>
   </div>
 );
@@ -41,7 +41,8 @@ BuildControls.propTypes = {
   isReadyToOrder: PropTypes.bool,
   onIngredientAdd: PropTypes.func,
   onIngredientRemove: PropTypes.func,
-  onOrdered: PropTypes.func
+  onOrdered: PropTypes.func,
+  isAuthenticated: PropTypes.bool
 };
 
 export default BuildControls;

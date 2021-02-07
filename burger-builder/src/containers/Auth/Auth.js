@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 import styles from './Auth.module.css';
 import Input from '../../components/ui/Input/Input';
@@ -110,8 +112,15 @@ class Auth extends Component {
       errorMessage = <p>{this.props.error.message}</p>;
     }
 
+    let authRedirect = null;
+    if (this.props.isAuthenticated) {
+      const queryParams = new URLSearchParams(this.props.location.search);
+      authRedirect = <Redirect to={queryParams.get('redirectUrl')} />;
+    }
+
     return (
       <div className={styles.Auth}>
+        {authRedirect}
         {errorMessage}
         <form onSubmit={this.handleSubmit}>
           {form}
@@ -130,7 +139,11 @@ Auth.propTypes = {};
 Auth.defaultProps = {};
 
 const mapStateToProps = state => {
-  return { loading: state.auth.loading, error: state.auth.error };
+  return {
+    loading: state.auth.loading,
+    error: state.auth.error,
+    isAuthenticated: !!state.auth.token
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -139,6 +152,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const auth = connect(mapStateToProps, mapDispatchToProps)(Auth);
+const auth = connect(mapStateToProps, mapDispatchToProps)(withRouter(Auth));
 
 export { auth as Auth };
