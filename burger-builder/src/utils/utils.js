@@ -6,3 +6,7 @@ export function convertObjectToArray(obj) {
     return [...acc, { ...value, id: key }];
   }, []);
 }
+
+export function getTimeDifferenceInSeconds(firstDate, secondDate) {
+  return (firstDate.getTime() - secondDate.getTime()) / 1000;
+}
