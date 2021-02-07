@@ -1,7 +1,7 @@
 import * as actionTypes from './actionsTypes';
 import axios from '../../axios-orders';
 
-import { convertObjectToArray } from '../../utils/utils';
+import { convertObjectToArray } from '../../shared/utils';
 
 export const orderBurgerSuccess = (id, data) => ({
   type: actionTypes.ORDER_BURGER_SUCCESS,

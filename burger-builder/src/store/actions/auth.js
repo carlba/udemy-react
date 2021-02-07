@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getTimeDifferenceInSeconds } from '../../utils/utils';
+import { getTimeDifferenceInSeconds } from '../../shared/utils';
 import * as actionsTypes from './actionsTypes';
 
 export const authStart = () => {
