@@ -19,3 +19,7 @@ https://kutt.it/qJMIYK
 ![image-20210207152028862](https://cdn.jsdelivr.net/gh/carlba/assets@master/rW4k4P-image-20210207152028862.png)
 
 * You must only use hooks in functional component on the root level.
+
+### 433. Passing State Data Across Components
+
+https://kutt.it/tD98WC
