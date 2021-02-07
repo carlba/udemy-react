@@ -2205,3 +2205,23 @@ https://kutt.it/QhpHLv
 ### 315. Fetching Orders (via Redux)
 
 https://kutt.it/lniaYu
+
+## Section 18: Adding Authentication to our Burger Project
+
+Firebase rules
+
+```json
+{
+    "rules": { 
+      "orders": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      },
+       "ingredients": {
+        ".read": "true",
+        ".write": "true"
+      }
+    }
+  }
+```
+

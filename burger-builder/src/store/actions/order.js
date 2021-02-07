@@ -18,11 +18,11 @@ export const orderBurgerStart = () => {
   return { type: actionTypes.ORDER_BURGER_START };
 };
 
-export const orderBurger = data => {
+export const orderBurger = (data, token) => {
   return async dispatch => {
     dispatch(orderBurgerStart());
     try {
-      const response = await axios.post('/orders.json', data);
+      const response = await axios.post(`/orders.json?auth=${token}`, data);
       dispatch(orderBurgerSuccess(response.data.name, data));
     } catch (error) {
       console.log('Error while posting order', error);
@@ -45,12 +45,12 @@ export const fetchOrdersStart = () => {
   return { type: actionTypes.FETCH_ORDERS_START };
 };
 
-export const fetchOrders = () => {
+export const fetchOrders = token => {
   return async dispatch => {
     dispatch(fetchOrdersStart());
     try {
       const response = await axios.get(
-        'https://udemy-react-burger-build-default-rtdb.firebaseio.com/orders.json'
+        `https://udemy-react-burger-build-default-rtdb.firebaseio.com/orders.json?auth=${token}`
       );
       const orders = convertObjectToArray(response.data);
 
