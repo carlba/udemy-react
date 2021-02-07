@@ -23,3 +23,22 @@ https://kutt.it/qJMIYK
 ### 433. Passing State Data Across Components
 
 https://kutt.it/tD98WC
+
+### 434. Sending Http Requests
+
+https://kutt.it/A99AGg
+
+Convoluted way to send http request with fetch
+
+```jsx 
+const handleAddIngredient = async ingredient => {
+  const response = await fetch('https://udemy-react-hooks-course-default-rtdb.firebaseio.com/ingrediens.json', {
+    method: 'POST',
+    body: JSON.stringify(ingredient),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  const json = await response.json();
+  setIngredients(prevIngredients => [...prevIngredients, { ...ingredient, id: json.name }]);
+};
+```
+

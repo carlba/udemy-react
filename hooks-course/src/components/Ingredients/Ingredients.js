@@ -7,8 +7,14 @@ import IngredientList from './IngredientList';
 function Ingredients() {
   const [ingredients, setIngredients] = useState([]);
 
-  const handleAddIngredient = ingredient => {
-    setIngredients(prevIngredients => [...prevIngredients, { ...ingredient, id: Math.random().toString() }]);
+  const handleAddIngredient = async ingredient => {
+    const response = await fetch('https://udemy-react-hooks-course-default-rtdb.firebaseio.com/ingrediens.json', {
+      method: 'POST',
+      body: JSON.stringify(ingredient),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    const json = await response.json();
+    setIngredients(prevIngredients => [...prevIngredients, { ...ingredient, id: json.name }]);
   };
 
   return (
