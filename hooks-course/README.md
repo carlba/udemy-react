@@ -67,3 +67,42 @@ https://kutt.it/iCdSpO
 ```
 
 * The useCallback allows a function to not be recreated on re rendering
+
+### 439. Working with Refs & useRef()
+
+https://kutt.it/A9dLV8
+
+```jsx
+  const { onFilterChange } = props;
+  const [filter, setFilter] = useState('');
+  const inputRef = useRef();  
+	
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (filter === inputRef.current.value) {
+        const query = filter.length === 0 ? '' : `?orderBy="title"&equalTo="${filter}"`;
+        fetch('https://udemy-react-hooks-course-default-rtdb.firebaseio.com/ingredients.json' + query)
+          .then(response => response.json())
+          .then(json => convertObjectToArray(json))
+          .then(dataArray => onFilterChange(dataArray));
+      }
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [filter, onFilterChange, inputRef]);
+```
+
+* The value in filter is frozen when the timer is initialised.
+
+* To get the current value of the input we use `useRef()`  and hook it up to the input element
+
+  ```jsx
+  <input ref={inputRef} type="text" value={filter} onChange={event => setFilter(event.target.value)} />
+  ```
+
+* We can then compare previous value and current value of input.
+
+* The returned function in the cleanup function that gets executed after the effect.
+
+* 
