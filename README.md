@@ -2215,7 +2215,8 @@ Firebase rules
     "rules": { 
       "orders": {
         ".read": "auth != null",
-        ".write": "auth != null"
+        ".write": "auth != null",
+        ".indexOn": ["userId"]
       },
        "ingredients": {
         ".read": "true",
@@ -2224,4 +2225,8 @@ Firebase rules
     }
   }
 ```
+
+
+
+
 

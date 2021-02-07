@@ -45,12 +45,13 @@ export const fetchOrdersStart = () => {
   return { type: actionTypes.FETCH_ORDERS_START };
 };
 
-export const fetchOrders = token => {
+export const fetchOrders = (token, userId) => {
   return async dispatch => {
     dispatch(fetchOrdersStart());
     try {
       const response = await axios.get(
-        `https://udemy-react-burger-build-default-rtdb.firebaseio.com/orders.json?auth=${token}`
+        `https://udemy-react-burger-build-default-rtdb.firebaseio.com/orders.json`,
+        { params: { auth: token, orderBy: '"userId"', equalTo: `"${userId}"` } }
       );
       const orders = convertObjectToArray(response.data);
 
