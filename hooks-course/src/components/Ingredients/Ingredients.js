@@ -1,9 +1,22 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useReducer } from 'react';
 
 import IngredientForm from './IngredientForm';
 import Search from './Search';
 import IngredientList from './IngredientList';
 import ErrorModal from '../UI/ErrorModal';
+
+const ingredientReducer = (currentIngredients, action) => {
+  switch (action.type) {
+    case 'UPDATE':
+      return action.ingredients;
+    case 'CREATE':
+      return [...currentIngredients, action.ingredient];
+    case 'DELETE':
+      return currentIngredients.filter(ingredient => ingredient.id !== action.id);
+    default:
+      throw new Error('Should not happen');
+  }
+};
 
 export function convertObjectToArray(obj) {
   if (!obj) {
@@ -15,12 +28,13 @@ export function convertObjectToArray(obj) {
 }
 
 function Ingredients() {
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, dispatch] = useReducer(ingredientReducer, []);
+  // const [ingredients, setIngredients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
   const handleFilterChange = useCallback(filteredIngredients => {
-    setIngredients(filteredIngredients);
+    dispatch({ type: 'UPDATE', ingredients: filteredIngredients });
   }, []);
 
   const handleAddIngredient = async ingredient => {
@@ -39,7 +53,7 @@ function Ingredients() {
     }
     if (json) {
       setIsLoading(false);
-      setIngredients(prevIngredients => [...prevIngredients, { ...ingredient, id: json.name }]);
+      dispatch({ type: 'CREATE', ingredient: { ...ingredient, id: json.name } });
     }
   };
 
@@ -54,7 +68,7 @@ function Ingredients() {
       setIsLoading(false);
     }
     setIsLoading(false);
-    setIngredients(prevIngredients => prevIngredients.filter(ingredient => ingredient.id !== ingredientId));
+    dispatch({ type: 'DELETE', id: ingredientId });
   };
 
   const handleErrorModalOnClose = () => {

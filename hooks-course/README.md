@@ -140,3 +140,7 @@ console.log(name); // prints name state, e.g. 'Manu'setName('Max');console.log(n
 You could think that accessing the name state after `setName('Max');` should yield the new value (e.g. `'Max'`) but this is **NOT the case**. Keep in mind, that the **new state value is only available in the next component render cycle** (which gets scheduled by calling `setName()`).
 
 **Both concepts (batching and when new state is available) behave in the same way for both functional components with hooks as well as class-based components with** `**this.setState()**`**!**
+
+### 444. Understanding useReducer()
+
+https://kutt.it/qciFLX
