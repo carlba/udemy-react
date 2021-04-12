@@ -46,3 +46,17 @@ const mapDispatchToProps = state => {
 };
 
 export default connect(mapDispatchToProps)(Layout);
+
+HOW
+
+1. Goto FQDN/onboarding2. Enter a 10000 characters long company name
+
+Expected Result
+
+A length limitation should be enforced on the field.
+
+Actual Result
+
+It is possibly to enter a company name of any length.
+
+
