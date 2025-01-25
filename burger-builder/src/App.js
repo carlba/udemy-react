@@ -1,15 +1,20 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component, useEffect, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import Layout from './hoc/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
-import Checkout from './containers/Checkout/Checkout';
-import Orders from './containers/Orders/Orders';
-import { Auth } from './containers/Auth/Auth';
 import { Logout } from './containers/Auth/Logout';
 import * as actions from './store/actions';
+
+
+const Checkout = React.lazy(()=> import('./containers/Checkout/Checkout'));
+
+const Orders = React.lazy(()=> import('./containers/Orders/Orders'));
+
+const Auth = React.lazy(()=> import('./containers/Auth/Auth'));
+
 
 const App = props => {
   useEffect (()=> {
@@ -21,7 +26,7 @@ const App = props => {
      */
   let routes = (
     <Switch>
-      <Route path="/auth" component={Auth}></Route>
+      <Route path="/auth" render ={()=> <Auth/>}/>
       <Route path="/" exact component={BurgerBuilder}></Route>
       <Redirect to="/" />
     </Switch>
@@ -30,10 +35,11 @@ const App = props => {
   if (props.isAuthenticated) {
     routes = (
       <Switch>
-        <Route path="/checkout" component={Checkout}></Route>
-        <Route path="/orders" component={Orders}></Route>
-        <Route path="/logout" component={Logout}></Route>
-        <Route path="/" exact component={BurgerBuilder}></Route>
+        <Route path="/checkout" render={()=><Checkout/>}/>
+        <Route path="/orders" render={()=><Orders/>}/>
+        <Route path="/logout" render={Logout}/>
+        <Route path="/auth" render ={()=> <Auth/>}/>
+        <Route path="/" exact component={BurgerBuilder}/>
         <Redirect to="/" />
       </Switch>
     );
@@ -41,7 +47,7 @@ const App = props => {
   return (
     <div>
       <Layout>
-        <Switch>{routes}</Switch>
+        <Suspense fallback={<p>Loading ...</p>}>{routes}</Suspense>
       </Layout>
     </div>
   );
